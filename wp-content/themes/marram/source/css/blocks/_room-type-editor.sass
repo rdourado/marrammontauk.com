@@ -1,0 +1,141 @@
+.wp-block-marram-room-type
+	border-bottom: 1px solid $stone
+	border-top: 1px solid $stone
+
+	&:after
+		clear: both
+		content: ""
+		display: table
+
+	&__name
+		box-sizing: border-box
+		color: $horizon
+		font: #{rem(30 / $ratio)} / 1 $serif
+		font-variant: small-caps
+		letter-spacing: .05em
+		margin: 0
+		min-height: rem(125 / $ratio)
+		padding: rem(20 / $ratio) 0
+		position: relative
+		text-transform: lowercase
+		+breakpoint($md)
+			font-size: rem(22)
+			min-height: 0
+			padding: rem(50) 0
+		+breakpoint($lg)
+			padding: rem(40) 0
+
+	&__content,
+	&__gallery
+		margin: rem(15 / $ratio) 0 rem(75 / $ratio)
+		+breakpoint($md)
+			margin: 0 0 rem(50)
+
+	&__content
+		+breakpoint($md)
+			max-width: rem(500)
+		+breakpoint($lg)
+			float: left
+			width: 50%
+
+	&__description
+		border-bottom: 1px solid $stone
+		font: #{rem(30 / $ratio)} / #{rem(40 / $ratio)} $serif
+		margin: 0
+		padding: 0 0 rem(75 / $ratio)
+		+breakpoint($md)
+			font: #{rem(22)} / #{rem(30)} $serif
+			padding-bottom: rem(50)
+
+	&__all-features
+		&:after
+			clear: both
+			content: ""
+			display: table
+
+		+breakpoint($md)
+			display: flex
+
+	& &__features
+		float: left
+		margin: rem(75 / $ratio) 0 0
+		width: calc(50% - #{rem(50 / 2 / $ratio)})
+
+		&:nth-child(2n)
+			float: right
+
+		+breakpoint($md)
+			&,
+			&:nth-child(2n)
+				float: none
+				margin: rem(50) 5% 0 0
+				width: 33%
+
+	&__features-title
+		font: rem(16 / $ratio) $sans
+		letter-spacing: .175em
+		margin: 0 0 1em
+		padding: 0
+		text-transform: uppercase
+		+breakpoint($md)
+			font-size: rem(14)
+			font-variant: small-caps
+			font-weight: 300
+			margin-bottom: .5em
+			text-transform: lowercase
+
+	& &__features-list
+		font: #{rem(24 / $ratio)} / 1.5 $serif
+		list-style: none
+		margin: 0
+		padding: 0
+		+breakpoint($md)
+			font-size: rem(12)
+
+		> li
+			margin: 0 0 .5em
+
+	&__gallery
+		.blocks-gallery-item
+			.block-editor-rich-text,
+			+ .blocks-gallery-item
+				display: none !important // sass-lint:disable-line no-important
+
+		img
+			display: block
+			height: auto
+			min-height: rem(200)
+			width: 100%
+
+		figure
+			margin: 0 0 4px
+			padding: 0
+			position: relative
+
+		+breakpoint($lg)
+			float: right
+			width: 50%
+
+	&__button
+		background: transparent
+		border: 1px solid $stone
+		box-sizing: border-box
+		color: $taupe
+		cursor: pointer
+		display: none
+		font: 500 #{rem(16 / $ratio)} / 1.5 $sans
+		letter-spacing: .175em
+		margin: rem(75 / $ratio) 0
+		padding: rem(13 / $ratio)
+		text-align: center
+		text-transform: uppercase
+		transition: background $speed $ease
+		width: 100%
+		+breakpoint($md)
+			font-size: rem(12)
+			margin: rem(50) auto
+			max-width: rem(325)
+			padding: rem(9) rem(25)
+		+breakpoint($lg)
+			margin: rem(-10) rem(60) rem(-10) auto
+			width: auto

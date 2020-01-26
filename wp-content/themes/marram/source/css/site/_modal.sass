@@ -1,0 +1,82 @@
+.mtk-modal
+	background: rgba($sand, .4)
+	bottom: 0
+	left: 0
+	overflow: auto
+	position: fixed
+	right: 0
+	text-align: center
+	top: 0
+	z-index: 90
+
+	&:before
+		content: ""
+		display: inline-block
+		height: 100%
+		vertical-align: middle
+
+	&__wrap
+		background: $sand
+		border: 1px solid $stone
+		box-sizing: border-box
+		display: inline-block
+		max-width: rem(840)
+		padding: rem(100 / $ratio)
+		position: relative
+		text-align: left
+		vertical-align: middle
+		width: calc(100% - #{rem(50 / $ratio * 2)})
+		+breakpoint($md)
+			padding: rem(75)
+			width: calc(100% - #{rem(55 * 2)})
+		+breakpoint($lg)
+			width: calc(100% - #{rem(60 * 2)})
+
+		> div,
+		> section
+			margin: 0
+			padding: 0
+
+	&__close
+		background: none
+		border: none
+		display: block
+		font: 0 / 0 serif
+		margin: 0
+		padding: rem(26)
+		position: absolute
+		right: 0
+		top: 0
+
+		&:before,
+		&:after
+			border-top: 1px solid $taupe
+			content: ""
+			display: block
+			left: 50%
+			margin-left: rem(-7)
+			position: absolute
+			top: 50%
+			transition: border $speed $ease
+			width: rem(14)
+
+		&:before
+			transform: rotate(45deg)
+
+		&:after
+			transform: rotate(-45deg)
+
+		&:hover
+			&:before,
+			&:after
+				border-color: $stone
+
+	&--show
+		animation: fadein ($speed * 2) forwards
+
+@keyframes fadein
+	from
+		opacity: 0
+
+	to
+		opacity: 1

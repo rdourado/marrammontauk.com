@@ -1,0 +1,106 @@
+.wp-block-marram-fifty-fifty
+	&__block
+		padding: rem(50 / $ratio) 0
+		+breakpoint($lg)
+			display: flex
+			justify-content: space-between
+			padding: rem(50) 0
+
+	&__body,
+	&__image
+		margin: 0
+		padding: 0
+
+	&__body
+		padding-bottom: rem(75 / $ratio)
+		+breakpoint($md)
+			max-width: rem(500)
+			padding-bottom: rem(50)
+		+breakpoint($lg)
+			max-width: none
+			width: percentage(500 / 1280)
+
+	&__image
+		+breakpoint($lg)
+			width: percentage(640 / 1280)
+
+		&:empty
+			display: none
+
+	&__caption
+		font: #{rem(16 / $ratio)} $serif
+		letter-spacing: .075em
+		margin-top: .75em
+		text-align: right
+		+breakpoint($md)
+			font-size: rem(12)
+
+	&__title,
+	&__content
+		font: #{rem(30 / $ratio)} / #{rem(40 / $ratio)} $serif
+		margin: 0
+		padding: 0
+		+breakpoint($md)
+			font-size: rem(22)
+			line-height: rem(30)
+
+	&__content
+		b,
+		strong
+			font: inherit
+			font-variant: small-caps
+			text-transform: lowercase
+
+		em b
+			font: inherit
+			text-transform: none
+
+	&__list
+		font: 500 #{rem(12)} / 2 $sans
+		letter-spacing: .175em
+		list-style: none
+		margin: 2em 0 0
+		padding: 0
+		text-transform: uppercase
+
+	&.is-style-alt &__content
+		font-style: italic
+
+		strong
+			display: block
+			font-style: normal
+			margin-top: 1em
+			+breakpoint($md)
+				display: inline
+				margin-top: 0
+
+		br + strong
+			+breakpoint($md)
+				display: inline-block
+				margin-top: .538461538em
+
+	&__title
+		color: $stone
+		font-family: $sans
+		letter-spacing: .075em
+		text-transform: uppercase
+
+	&.is-style-alt &__title
+		float: none
+		margin-bottom: rem(55 / $ratio)
+		+breakpoint($md)
+			margin-bottom: rem(20)
+
+	&__button
+		border: 1px solid $stone
+		color: $taupe
+		display: inline-block
+		font: 500 #{rem(16 / $ratio)} / 1.25 $sans
+		letter-spacing: .175em
+		margin: rem(65 / $ratio) 0 0
+		padding: .75em 1.6em .9em
+		text-transform: uppercase
+		transition: background $speed $ease
+		+breakpoint($md)
+			font-size: rem(12)
+			margin: rem(50) 0 0

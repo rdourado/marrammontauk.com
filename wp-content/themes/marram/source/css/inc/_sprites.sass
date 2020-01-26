@@ -1,0 +1,38 @@
+// sass-lint:disable zero-unit, variable-name-format
+
+$phone: 0px 0px 0px 0px 101px 100px 210px 100px "../img/sprites.png"
+$pin: 109px 0px -109px 0px 101px 100px 210px 100px "../img/sprites.png"
+
+@function sprite-rem($n)
+	$n: $n / ($n * 0 + 1)
+	@return ($n / 16) * 1rem
+
+@function sprite-width($sprite)
+	@return sprite-rem(nth($sprite, 5) / 2)
+
+@function sprite-height($sprite)
+	@return sprite-rem(nth($sprite, 6) / 2)
+
+@mixin sprite-width($sprite)
+	width: sprite-width($sprite)
+
+@mixin sprite-height($sprite)
+	height: sprite-height($sprite)
+
+@mixin sprite-position($sprite)
+	$sprite-offset-x: sprite-rem(nth($sprite, 3) / 2)
+	$sprite-offset-y: sprite-rem(nth($sprite, 4) / 2)
+	background-position: $sprite-offset-x $sprite-offset-y
+
+@mixin sprite-image($sprite)
+	$sprite-width: sprite-rem(nth($sprite, 7) / 2)
+	$sprite-height: sprite-rem(nth($sprite, 8) / 2)
+	$sprite-image: nth($sprite, 9)
+	background-image: url(#{$sprite-image})
+	background-size: $sprite-width $sprite-height
+
+@mixin sprite($sprite)
+	+sprite-image($sprite)
+	+sprite-position($sprite)
+	+sprite-width($sprite)
+	+sprite-height($sprite)

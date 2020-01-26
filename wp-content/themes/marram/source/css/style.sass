@@ -1,0 +1,116 @@
+@import "inc/functions"
+@import "inc/mixins"
+@import "inc/fonts"
+@import "inc/sprites"
+
+
+html
+	// sass-lint:disable-block no-vendor-prefixes
+	+reset
+	-moz-osx-font-smoothing: grayscale
+	-webkit-font-smoothing: antialiased
+	height: 100%
+
+body
+	background: $sand
+	box-sizing: border-box
+	color: $taupe
+	height: 100%
+	margin: 0
+	overflow-x: hidden
+	overflow-y: auto
+	padding: rem(75 / $ratio) 0 0
+	position: relative
+	width: 100vw
+	+breakpoint($md)
+		padding: rem(60) 0 0
+	+breakpoint($lg)
+		padding: rem(70) 0 0
+
+	&.mtk--freeze
+		overflow: hidden
+
+	&.mtk--freeze-mobile
+		+breakpoint($lg, true)
+			overflow: hidden
+
+	&.admin-bar
+		height: calc(100% - 32px)
+		@media (max-width: 782px)
+			height: calc(100% - 46px)
+
+
+a
+	color: inherit
+	text-decoration: none
+
+label,
+button
+	cursor: pointer
+
+img,
+svg
+	display: inline-block
+	height: auto
+	max-width: 100%
+
+svg
+	display: block
+	fill: currentColor
+
+::selection
+	background-color: rgba($horizon, .5)
+
+.screen-reader-text
+	display: none
+
+.mtk-page-heading,
+.mtk-text-module,
+.mtk-fifty-fifty,
+.mtk-stay-in-touch,
+.mtk-happenings,
+.mtk-highlights,
+.mtk-rotating-quotes,
+.mtk-special-offer,
+.mtk-special-offers,
+.mtk-special-offers .mtk-special-offer,
+.mtk-points-of-interest,
+.mtk-product,
+.mtk-playlist,
+.mtk-close-up
+	& + &
+		border-top: 1px solid $stone
+
+.mtk-special-offers
+	border-top: none !important // sass-lint:disable-line no-important
+
+@import "inc/slick"
+@import "site/single"
+@import "site/breadcrumbs"
+@import "site/header"
+@import "site/nav"
+@import "site/pagination"
+@import "site/footer"
+@import "site/close-up"
+@import "site/modal"
+@import "site/query-args"
+@import "blocks/wp"
+@import "blocks/fifty-fifty"
+@import "blocks/galleries"
+@import "blocks/highlights"
+@import "blocks/clippings"
+@import "blocks/happenings"
+@import "blocks/nav-menu"
+@import "blocks/page-heading"
+@import "blocks/rooms-group"
+@import "blocks/room-type"
+@import "blocks/playlist"
+@import "blocks/rotating-quotes"
+@import "blocks/special-offer"
+@import "blocks/stay-in-touch"
+@import "blocks/text-module"
+@import "blocks/post-date"
+@import "blocks/points-of-interest"
+@import "blocks/product"
+@import "forms/events"
+@import "inc/animate"

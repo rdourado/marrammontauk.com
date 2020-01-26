@@ -1,0 +1,66 @@
+@import "variables"
+
+=admin-bar
+	.admin-bar &
+		margin-top: 32px
+		@media screen and (max-width: 782px)
+			margin-top: 46px
+			@content
+		@media screen and (max-width: 600px)
+			margin-top: 0
+
+=breakpoint($bp: $sm, $max: false)
+	@if $bp == admin-bar
+		@media screen and (max-width: 782px)
+			@content
+	@elseif $bp == "wpmd"
+		@media screen and (min-width: 600px)
+			@content
+	@elseif ($max == true)
+		@media (max-width: rem(map-get($bp, bkp) - 1))
+			@content
+	@else
+		@media (min-width: rem(map-get($bp, bkp)))
+			@content
+
+=reset
+	box-sizing: border-box
+	margin: 0
+	padding: 0
+
+=reset-button
+	+reset
+	appearance: none
+	background: transparent
+	border: none
+	cursor: pointer
+	outline: none
+
+=reset-list
+	+reset
+	list-style-type: none
+
+=responsive-image
+	display: block
+	height: auto
+	width: 100%
+
+=number-of-children($n, $child: &)
+	@if $n == 1
+		&:first-child:nth-last-child(#{$n})
+			@content
+	@else
+		&:first-child:nth-last-child(#{$n}),
+		&:first-child:nth-last-child(#{$n}) ~ #{$child}
+			@content
+
+=next-siblings($s)
+	+ #{$s},
+	+ #{$s} + #{$s},
+	+ #{$s} + #{$s} + #{$s},
+	+ #{$s} + #{$s} + #{$s} + #{$s},
+	+ #{$s} + #{$s} + #{$s} + #{$s} + #{$s},
+	+ #{$s} + #{$s} + #{$s} + #{$s} + #{$s} + #{$s},
+	+ #{$s} + #{$s} + #{$s} + #{$s} + #{$s} + #{$s} + #{$s},
+	+ #{$s} + #{$s} + #{$s} + #{$s} + #{$s} + #{$s} + #{$s} + #{$s}
+		@content

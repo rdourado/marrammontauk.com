@@ -1,0 +1,20 @@
+.wp-block-marram-text-module
+	& &__block
+		font: #{rem(30 / $ratio)} / #{rem(40 / $ratio)} $serif
+		margin: 0
+		padding: rem(50 / $ratio) 0
+		+breakpoint($md)
+			font: #{rem(22)} / #{rem(30)} $serif
+			max-width: rem(500)
+			padding: rem(50) 0
+		+breakpoint($xl)
+			max-width: rem(660)
+
+		b,
+		strong
+			font-variant: small-caps
+			font-weight: inherit
+			text-transform: lowercase
+
+		strong
+			color: $horizon

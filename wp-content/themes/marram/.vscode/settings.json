@@ -1,0 +1,5 @@
+{
+	"editor.formatOnSave": true,
+	"phpcs.standard": "ruleset.xml",
+	"phpcs.composerJsonPath": "composer.json"
+}

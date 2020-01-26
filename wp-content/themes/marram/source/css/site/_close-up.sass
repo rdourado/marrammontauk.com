@@ -1,0 +1,164 @@
+.mtk-close-up
+	list-style: none
+	margin: 0 rem((50 - 20) / $ratio) rem(100 / $ratio)
+	padding: 0
+	position: relative
+	+breakpoint($md)
+		margin: 0 rem(55 - 15) rem(75)
+	+breakpoint($lg)
+		margin: 0 rem(60 - 20) rem(75)
+
+	&.slick-slider
+		margin-left: rem(50 / $ratio)
+		margin-right: rem(50 / $ratio)
+		+breakpoint($md)
+			margin-left: rem(55)
+			margin-right: rem(55)
+		+breakpoint($lg)
+			margin-left: rem(60)
+			margin-right: rem(60)
+
+	&__header
+		align-items: center
+		display: flex
+		justify-content: space-between
+		margin: rem(100 / $ratio) rem(50 / $ratio) 0
+		+breakpoint($md)
+			margin: rem(50) rem(55) 0
+		+breakpoint($lg)
+			margin: rem(50) rem(60) 0
+
+	&__title
+		color: $taupe
+		font: rem(30 / $ratio) $serif
+		font-variant: small-caps
+		letter-spacing: .05em
+		margin: 0
+		padding: 0
+		text-transform: lowercase
+		+breakpoint($md)
+			font-size: rem(22)
+
+	&__close
+		background: transparent
+		border: none
+		display: block
+		font: 0 / 0 serif
+		height: round(28px / $ratio)
+		position: relative
+		width: round(28px / $ratio)
+
+		&::before,
+		&::after
+			border-top: 1px solid $taupe
+			content: ""
+			display: block
+			left: 0
+			position: absolute
+			right: 0
+			top: round(28px / 2 / $ratio)
+			transition: border $speed $ease
+
+		&::before
+			transform: rotate(45deg)
+
+		&::after
+			transform: rotate(135deg)
+
+		&:hover
+			&::before,
+			&::after
+				border-top-color: $stone
+
+	img,
+	figure
+		display: block
+		margin: 0
+		padding: 0
+
+	figure
+		margin: 0 rem(20 / $ratio)
+		max-width: calc(100vw - #{rem(50 / $ratio) * 2})
+		object-fit: cover
+		+breakpoint($md)
+			margin: 0 rem(15)
+			max-width: calc(100vw - #{rem(55) * 2})
+		+breakpoint($lg)
+			margin: 0 rem(20)
+			max-width: calc(100vw - #{rem(60) * 2})
+
+	img
+		height: auto
+		// margin: rem(75 / $ratio) 0
+		max-height: calc(80vh - #{rem(75 / $ratio) * 2})
+		max-width: 100%
+		min-height: rem(400)
+		min-width: 100%
+		width: auto
+		+breakpoint($md)
+			// margin: rem(50) 0
+			max-height: calc(80vh - #{rem(50) * 2})
+
+	figcaption
+		color: $taupe
+		display: block
+		font: #{rem(30 / $ratio)} / #{rem(40 / $ratio)} $serif
+		margin: 0
+		padding: 0
+		+breakpoint($md)
+			max-width: rem(500)
+
+	strong
+		color: $horizon
+		font: inherit
+		font-variant: small-caps
+		text-transform: lowercase
+
+	.slick-arrow
+		align-items: center
+		background: $sand
+		border: none
+		display: none
+		font: 0 / 0 serif
+		height: rem(120)
+		justify-content: center
+		margin: rem(120 / -2) 0 0
+		outline: none
+		padding: 0
+		position: absolute
+		top: 50%
+		width: rem(56)
+		z-index: 10
+		+breakpoint($md)
+			display: flex
+
+		&:before
+			border-bottom: 1px solid $taupe
+			border-right: 1px solid $taupe
+			box-sizing: border-box
+			content: ""
+			display: block
+			height: rem(20)
+			transition: border $speed $ease
+			width: rem(20)
+
+		&:hover
+			&:before
+				border-bottom-color: $stone
+				border-right-color: $stone
+
+	.slick-prev
+		left: rem(-55)
+		+breakpoint($lg)
+			left: rem(-60)
+
+		&:before
+			transform: translateX(25%) rotate(135deg) skew(-6deg, -6deg)
+
+	.slick-next
+		right: rem(-55)
+		+breakpoint($lg)
+			right: rem(-60)
+
+		&:before
+			transform: translateX(-25%) rotate(-45deg) skew(-6deg, -6deg)

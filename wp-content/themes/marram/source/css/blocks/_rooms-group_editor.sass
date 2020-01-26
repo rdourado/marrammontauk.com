@@ -1,0 +1,22 @@
+.wp-block-marram-rooms-group
+	border-top: 1px solid $stone
+	padding: rem((66 - 27) / 2) 0
+	position: relative
+	+breakpoint($md)
+		padding: rem((120 - 39) / 2) 0
+	+breakpoint($xl)
+		border-top: 2px solid $stone
+		display: flex
+		flex-wrap: wrap
+		padding: rem((94 - 39) / 2) 0
+
+	&__name
+		+reset
+		color: $taupe
+		font: rem(18, rem(27)) $serif
+		font-variant: small-caps
+		letter-spacing: .05em
+		text-transform: lowercase
+		+breakpoint($md)
+			font-size: rem(26)
+			line-height: rem(39)

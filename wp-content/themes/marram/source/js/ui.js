@@ -1,0 +1,20 @@
+/**
+ * Internal dependencies
+ */
+import './site/header'
+import './site/links'
+import './site/reserve'
+import './site/mailchimp'
+import './site/modal'
+import './blocks/wp'
+import './blocks/galleries'
+import './blocks/clippings'
+import './blocks/happenings'
+import './blocks/room-type'
+import './blocks/rooms-group'
+import './blocks/playlist'
+import './blocks/rotating-quotes'
+import './blocks/special-offer'
+import './blocks/points-of-interest'
+import './blocks/nav-menu'
+import './site/animations'

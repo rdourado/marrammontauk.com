@@ -1,0 +1,122 @@
+.wp-block-marram-room-type
+	border-top: 1px solid $stone
+	position: relative
+	+breakpoint($xl)
+		border-top: 2px solid $stone
+		display: flex
+		flex-wrap: wrap
+
+	&__name
+		+reset
+		color: $horizon
+		font: rem(18, rem(27)) $serif
+		font-variant: small-caps
+		letter-spacing: .05em
+		padding: rem((66 - 27) / 2) 0
+		text-transform: lowercase
+		+breakpoint($md)
+			font-size: rem(26)
+			line-height: rem(39)
+			padding: rem((120 - 39) / 2) 0
+		+breakpoint($lg)
+			padding: rem((94 - 39) / 2) 0
+
+	&__description,
+	&__details
+		font: rem(14, rem(20)) $serif
+		padding-top: rem(20)
+		+breakpoint($md)
+			font-size: rem(26)
+			line-height: rem(36)
+
+	&__description p
+		font: inherit
+		margin: 0
+		padding: 0
+
+	&__details
+		+reset-list
+		font-variant: small-caps
+		letter-spacing: .05em
+		margin-top: 1.5em
+		text-transform: lowercase
+
+	&__content,
+	&__gallery
+		margin: 0
+		+breakpoint($xl)
+			flex: 0 0 50%
+
+	&__content
+		padding-right: 15%
+		+breakpoint($lg)
+			padding-right: rem(15)
+		+breakpoint($xl)
+			padding-right: 15%
+
+	&__all-features
+		border-top: 2px solid $stone
+		display: flex
+		flex-wrap: wrap
+		margin-top: rem(40)
+		padding-top: rem(40)
+
+	&__feature
+		flex: 0 0 50%
+		+breakpoint($md)
+			flex: none
+			margin-right: auto
+
+	&__feature-title
+		+reset
+		color: inherit
+		font: rem(9, rem(24)) $sans
+		font-variant: small-caps
+		letter-spacing: .175em
+		text-transform: lowercase
+		+breakpoint($lg)
+			font-size: rem(12)
+			font-weight: 300
+			letter-spacing: .05em
+			line-height: rem(20)
+
+	&__feature-list
+		+reset-list
+		font: 500 rem(12, rem(24)) $serif
+		+breakpoint($lg)
+			line-height: rem(20)
+
+	&__gallery
+		margin: (gut($sm) * .8) 0 0
+		+breakpoint($md)
+			margin: (gut($md) * .8) 0 0
+		+breakpoint($xl)
+			margin: (gut($xl) * .8) 0 0
+
+		figure
+			+reset
+			position: relative
+
+		img
+			display: block
+			height: auto
+			max-height: 100%
+			object-fit: cover
+			width: 100%
+
+		figcaption
+			display: none
+
+		.blocks-gallery-item
+			+ .blocks-gallery-item
+				margin-top: rem(20)
+
+			&.has-add-item-button
+				grid-column: 1 / -1
+
+			.editor-rich-text
+				background: $sand
+
+			.is-selected .editor-rich-text .editor-rich-text__tinymce
+				padding-top: 0
+

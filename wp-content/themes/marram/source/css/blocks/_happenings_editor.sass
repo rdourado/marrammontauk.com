@@ -1,0 +1,135 @@
+.wp-block-marram-happenings
+	border-bottom: 1px solid $stone
+	border-top: 1px solid $stone
+	padding: rem(map-get($sm, gut) * 9/5) 0
+	+breakpoint($md)
+		padding: rem(map-get($md, gut)) 0 rem(map-get($md, gut) * 9/5)
+	+breakpoint($xl)
+		padding: rem(map-get($xl, gut)) 0
+
+	&__title
+		+reset
+		color: $horizon
+		font: rem(18, 1) $serif
+		font-variant: small-caps
+		margin-bottom: rem(map-get($sm, gut) * 9/5)
+		text-transform: lowercase
+		+breakpoint($md)
+			font-size: rem(26)
+			margin-bottom: rem(map-get($md, gut))
+		+breakpoint($xl)
+			margin-bottom: rem(map-get($xl, gut))
+
+	&__entry
+		border-top: 2px solid $stone
+		margin: 0 rem(map-get($sm, gut) * -1)
+		padding: 0 rem(map-get($sm, gut))
+		+breakpoint($md)
+			margin: 0
+			padding: 0
+
+		&:last-child
+			border-bottom: 2px solid $stone
+
+	&__header
+		padding: rem(12) rem(20) rem(12) 0
+		position: relative
+		+breakpoint($md)
+			align-items: center
+			display: flex
+			padding: rem(22) rem(30) rem(22) 0
+		+breakpoint($xl)
+			padding-left: rem(map-get($xl, gut) * 4/5)
+
+		&:before,
+		&:after
+			border-top: 2px solid $horizon
+			content: ""
+			display: block
+			margin-top: -1px
+			position: absolute
+			right: rem(7)
+			top: 50%
+			width: rem(16)
+			+breakpoint($md)
+				right: rem(10)
+				width: rem(20)
+
+		&:after
+			transform: rotate(90deg)
+
+	&__date
+		display: block
+		font: rem(9) $sans
+		margin-bottom: 1em
+		+breakpoint($md)
+			flex-basis: 40%
+			font-size: rem(14)
+			margin-bottom: 0
+		+breakpoint($xl)
+			font-size: rem(12)
+
+	&__name
+		+reset
+		color: inherit
+		font: rem(16, 1) $serif
+		+breakpoint($md)
+			flex-basis: 60%
+			font-size: rem(26)
+
+	&__all-events,
+	&__image
+		position: relative
+
+		&:before
+			content: ""
+			display: block
+			margin-bottom: rem(map-get($sm, gut))
+			padding-top: 88%
+			+breakpoint($md)
+				margin-bottom: rem(map-get($md, gut))
+				padding-top: 66%
+				width: 75%
+
+	&__all-events
+		+breakpoint($xl)
+			padding-left: 40%
+
+			&:before
+				bottom: 0
+				height: 100%
+				left: 0
+				margin: 0
+				padding-top: 0
+				position: absolute
+				top: 0
+				width: 40%
+
+	&__image
+		+reset
+		left: 0
+		position: absolute
+		right: 0
+		top: 0
+		+breakpoint($xl)
+			bottom: 0
+			right: auto
+			width: 40%
+
+		&:before
+			margin-bottom: 0
+			+breakpoint($xl)
+				display: none
+
+		img
+			display: block
+			height: 100%
+			left: 0
+			object-fit: cover
+			position: absolute
+			top: 0
+			width: 100%
+			+breakpoint($md)
+				width: 75%
+			+breakpoint($xl)
+				width: 100%

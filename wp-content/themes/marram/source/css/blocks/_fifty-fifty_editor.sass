@@ -1,0 +1,58 @@
+.wp-block-marram-fifty-fifty
+	border-bottom: 1px solid $stone
+	border-top: 1px solid $stone
+	padding: (gut($sm) * 1.6) 0
+	+breakpoint($md)
+		padding: (gut($md) * 1.6) 0
+
+	&__body > .editor-rich-text:first-child
+		float: left
+		margin: 0 .3em 0 0
+		position: relative
+		z-index: 20
+
+	.block-library-button__inline-link
+		margin-top: rem(5)
+
+	&__title,
+	&__content p
+		+reset
+		font: rem(18, rem(21)) $serif
+		+breakpoint($md)
+			font-size: rem(26)
+			line-height: rem(32)
+
+	&__title
+		color: $horizon
+		font-variant: small-caps
+		text-transform: lowercase
+
+	&__content
+		padding-right: 15%
+
+	&__image img
+		display: block
+		height: auto
+		width: 100%
+
+	&__button
+		border: 1px solid $stone
+		display: inline-block
+		font: 500 rem(10, 1) $sans
+		margin: 3em 0 0
+		padding: .9em 1.8em .8em
+		text-transform: uppercase
+		+breakpoint($md)
+			font-size: rem(12)
+		+breakpoint($xl)
+			border-width: 2px
+
+		&[data-is-placeholder-visible="true"]
+			border-color: transparent
+			height: auto
+			width: auto
+
+			&:after
+				color: transparent
+				content: "Add text…"
+				height: 0

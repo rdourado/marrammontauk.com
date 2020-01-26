@@ -1,0 +1,225 @@
+.mtk-room-type
+	@extend %mtk-rooms-group
+
+	&--active
+		@extend %mtk-rooms-group--active
+		background: $sand-dark
+		margin-left: 0
+		margin-right: 0
+		padding-left: rem(50 / $ratio)
+		padding-right: rem(50 / $ratio)
+		position: relative
+		+breakpoint($md)
+			margin-left: 0
+			margin-right: 0
+			padding-left: rem(55)
+			padding-right: rem(55)
+		+breakpoint($lg)
+			margin-left: 0
+			margin-right: 0
+			padding-left: rem(60)
+			padding-right: rem(60)
+
+		&:before
+			border-top: 1px solid $stone
+			bottom: -1px
+			content: ""
+			display: block
+			left: 0
+			position: absolute
+			right: 0
+
+	&:after
+		clear: both
+		content: ""
+		display: table
+
+	&__header
+		@extend .mtk-rooms-group__header
+
+	&__name
+		@extend .mtk-rooms-group__name
+
+	&__name,
+	&--active &__name
+		color: $horizon
+
+	&__content,
+	&__gallery
+		display: none
+		margin: rem(15 / $ratio) 0 rem(75 / $ratio)
+		+breakpoint($md)
+			margin: 0 0 rem(50)
+
+	&--active &__content,
+	&--active &__gallery
+		display: block
+
+	&__content
+		+breakpoint($md)
+			max-width: rem(500)
+		+breakpoint($lg)
+			float: left
+			width: 50%
+
+	&__description
+		border-bottom: 1px solid $stone
+		font: #{rem(30 / $ratio)} / #{rem(40 / $ratio)} $serif
+		margin: 0
+		padding: 0 0 rem(75 / $ratio)
+		+breakpoint($md)
+			font: #{rem(22)} / #{rem(30)} $serif
+			padding-bottom: rem(50)
+
+	&__all-features
+		&:after
+			clear: both
+			content: ""
+			display: table
+
+		+breakpoint($md)
+			display: flex
+
+	&__features
+		float: left
+		margin: rem(75 / $ratio) 0 0
+		width: calc(50% - #{rem(50 / 2 / $ratio)})
+
+		&:nth-child(2n)
+			float: right
+
+		+breakpoint($md)
+			&,
+			&:nth-child(2n)
+				float: none
+				margin: rem(50) 2% 0 0
+				width: #{((100% - 2) * 3) / 3}
+
+	&__features-title
+		font: bold rem(16 / $ratio) $sans
+		letter-spacing: .175em
+		margin: 0 0 1em
+		padding: 0
+		text-transform: uppercase
+		+breakpoint($md)
+			font-size: rem(11)
+			margin-bottom: .5em
+
+	&__features-list
+		font: 300 #{rem(24 / $ratio)} / 1.5 $sans
+		list-style: none
+		margin: 0
+		padding: 0
+		+breakpoint($md)
+			font-size: rem(14)
+
+		> li
+			margin: .5em 0 0
+
+	&__gallery
+		> .blocks-gallery-item:not(:first-child)
+			display: none
+
+		.blocks-gallery-item
+			margin: 0 !important // sass-lint:disable-line no-important
+			position: relative
+			width: auto
+
+		img
+			display: block
+			height: auto
+			width: 100%
+
+		figure
+			margin: 0
+			padding: 0
+
+		figcaption
+			display: none
+
+		.slick-arrow
+			align-items: center
+			background: transparent
+			border: none
+			display: flex
+			font: 0 / 0 serif
+			height: rem(120)
+			justify-content: center
+			margin: rem(120 / -2) 0 0
+			outline: none
+			padding: 0
+			pointer-events: none
+			position: absolute
+			top: 50%
+			visibility: hidden
+			width: rem(56)
+			z-index: 10
+			+breakpoint($md)
+				pointer-events: auto
+				visibility: visible
+
+			&:before
+				border-bottom: 1px solid #fff
+				border-right: 1px solid #fff
+				box-sizing: border-box
+				content: ""
+				display: block
+				height: rem(20)
+				width: rem(20)
+
+		.slick-prev
+			left: 0
+
+			&:before
+				transform: translateX(25%) rotate(135deg) skew(-6deg, -6deg)
+
+		.slick-next
+			right: 0
+
+			&:before
+				transform: translateX(-25%) rotate(-45deg) skew(-6deg, -6deg)
+
+		+breakpoint($lg)
+			float: right
+			width: 50%
+
+	&__button
+		background: $sand
+		border: 1px solid $stone
+		box-sizing: border-box
+		color: $taupe
+		cursor: pointer
+		display: none
+		font: 500 #{rem(16 / $ratio)} / 1.5 $sans
+		letter-spacing: .175em
+		margin: rem(75 / $ratio) 0
+		padding: rem(13 / $ratio)
+		text-align: center
+		text-transform: uppercase
+		transition: background $speed $ease
+		width: 100%
+		+breakpoint($md)
+			font-size: rem(12)
+			margin: rem(50) auto
+			max-width: rem(325)
+			padding: rem(9) rem(25)
+		+breakpoint($lg)
+			margin: rem(-10) rem(60) rem(-10) auto
+			width: auto
+
+		&:hover
+			background: $stone
+
+	&--active &__button
+		display: block
+
+	&__header > &__button
+		display: none
+
+	&--active &__header > &__button
+		+breakpoint($lg)
+			display: inline-block
+
+	& > &__button
+		+breakpoint($lg)
+			display: none

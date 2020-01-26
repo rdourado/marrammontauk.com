@@ -1,0 +1,229 @@
+@import "../../../../css/inc/functions"
+@import "../../../../css/inc/mixins"
+
+
+.main
+	+breakpoint($md)
+		display: flex
+		width: 45%
+	+breakpoint($lg)
+		width: 60%
+
+.value
+	align-items: center
+	box-sizing: border-box
+	color: $taupe
+	display: flex
+	font: rem(26 / $ratio) $serif
+	font-variant: small-caps
+	letter-spacing: .05em
+	margin: 0 0 rem(30 / $ratio)
+	outline: none
+	position: relative
+	text-transform: uppercase
+	white-space: nowrap
+	+breakpoint($md)
+		border-bottom: 1px solid $stone
+		border-top: 1px solid $stone
+		margin: 0
+		padding: 0 rem(30)
+		width: 100%
+	+breakpoint($lg)
+		padding: 0 rem(60)
+		width: 50%
+
+	& ~ &
+		margin-bottom: rem(40 / $ratio)
+		+breakpoint($md)
+			margin: 0
+
+	&::before
+		border-bottom: 1px solid $stone
+		border-right: 1px solid $stone
+		content: ""
+		display: block
+		padding: rem(8 / $ratio)
+		position: absolute
+		right: 0
+		top: 50%
+		transform: translateY(-75%) rotate(45deg)
+		+breakpoint($md)
+			right: rem(30)
+
+	&::after
+		background: transparent
+		bottom: 0
+		content: ""
+		cursor: pointer
+		display: block
+		left: 0
+		position: absolute
+		right: 0
+		top: 0
+		z-index: 6
+
+.input
+	appearance: none
+	background: transparent
+	border: none
+	box-sizing: border-box
+	color: inherit
+	flex-grow: 1
+	font: rem(12) $sans
+	letter-spacing: inherit
+	margin: 0
+	outline: none
+	padding: 0 .5em
+	text-transform: uppercase
+	+breakpoint($md)
+		flex-grow: 0
+
+.calendar
+	background: $sand
+	border-bottom: 1px solid $stone
+	border-top: 1px solid $stone
+	box-sizing: border-box
+	display: none
+	left: 0
+	margin: 0
+	padding: rem(40 / $ratio) rem(50 / $ratio)
+	position: absolute
+	width: 100vw
+	z-index: 5
+	+breakpoint($md)
+		border-top: none
+		top: 100%
+		width: 50vw
+	+breakpoint($lg)
+		border-right: 1px solid $stone
+		width: 30vw
+
+	& ~ &
+		display: none
+
+		&.active
+			+breakpoint($md)
+				display: block
+				left: 50vw
+			+breakpoint($lg)
+				left: 30vw
+
+	+breakpoint($md)
+		.next
+			visibility: hidden
+
+		& ~ &
+			.next
+				visibility: visible
+
+			.prev
+				visibility: hidden
+
+.active
+	display: block
+
+.table
+	border: none
+	border-collapse: collapse
+	color: $taupe
+	font: rem(24 / $ratio) $sans
+	letter-spacing: .05em
+	margin: 0
+	padding: 0
+	text-align: center
+	width: 100%
+	+breakpoint($md)
+		font-size: rem(16)
+
+.header,
+.day,
+.weekdayname
+	padding: .5em 0
+
+.header
+	align-items: center
+	display: flex
+	font: 500 rem(18 / $ratio) $sans
+	justify-content: center
+	letter-spacing: .175em
+	margin: 0 0 .5em
+	text-transform: uppercase
+	+breakpoint($md)
+		font-size: rem(12)
+		justify-content: space-between
+
+.month,
+.day
+	font: inherit
+
+.prev,
+.next
+	align-items: center
+	background: transparent
+	border: none
+	display: flex
+	font: 0 / 0 serif
+	justify-content: center
+	margin: 0 rem(10)
+	outline: none
+	padding: rem(5)
+
+	&::before
+		content: ""
+		display: block
+		padding: rem(8 / $ratio)
+		transform: rotate(45deg)
+
+.prev
+	&::before
+		border-bottom: 1px solid $stone
+		border-left: 1px solid $stone
+
+.next
+	&::before
+		border-right: 1px solid $stone
+		border-top: 1px solid $stone
+
+.weekdayname
+	font: inherit
+	font-weight: 300
+
+.out
+	visibility: hidden
+
+.invalid
+	cursor: not-allowed
+	opacity: .3
+	pointer-events: none
+
+.cellbtn
+	background: transparent
+	border: none
+	box-sizing: border-box
+	color: inherit
+	display: block
+	font: inherit
+	margin: 0
+	outline: none
+	padding: 2px 0 3px
+	width: 100%
+
+	.day &
+		border-bottom: 1px solid transparent
+		border-top: 1px solid transparent
+
+	.sunday &,
+	.firstvalidday &
+		border-left: 1px solid transparent
+
+	.saturday &,
+	.lastvalidday &
+		border-right: 1px solid transparent
+
+	.inrange &
+		border-color: $stone
+
+	.firstday &,
+	.lastday &,
+	.day &:hover
+		background: $stone

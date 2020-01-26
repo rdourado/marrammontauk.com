@@ -1,0 +1,142 @@
+.mtk-galleries
+	color: $taupe
+	margin: 0 rem(50 / $ratio) rem(50 / $ratio)
+	position: relative
+	+breakpoint($md)
+		margin: 0 rem(55) rem(55)
+	+breakpoint($lg)
+		display: flex
+		flex-wrap: wrap
+		margin: 0 rem(40)
+
+	&__entry
+		font: #{rem(30 / $ratio)} / #{rem(40 / $ratio)} $serif
+		+breakpoint($md)
+			font-size: rem(22)
+			line-height: rem(30)
+		+breakpoint($lg)
+			margin: 0 rem(20) rem(75)
+			width: calc(33.33333% - #{rem(20) * 2})
+
+		& + &
+			margin-top: rem(75 / $ratio)
+			+breakpoint($md)
+				margin-top: rem(75)
+			+breakpoint($lg)
+				margin-top: 0
+
+	&__title,
+	&__headline
+		font: inherit
+		line-height: inherit
+		margin: 0
+		padding: 0
+
+	&__title
+		color: $horizon
+		float: left
+		font-variant: small-caps
+		margin: 0 .3em 0 0
+		text-transform: lowercase
+
+	&__headline
+		b
+			font: inherit
+			font-variant: small-caps
+			text-transform: lowercase
+
+		em b
+			font: inherit
+			font-variant: normal
+			text-transform: none
+
+	&__thumbnail
+		margin: 0 0 rem(50 / $ratio)
+		padding: 0
+		+breakpoint($md)
+			margin: 0 0 rem(50)
+		+breakpoint($lg)
+			margin: 0 0 rem(55)
+
+		img
+			display: block
+			height: rem(300 / $ratio)
+			object-fit: cover
+			width: 100%
+			+breakpoint($md)
+				height: rem(350)
+			+breakpoint($lg)
+				height: rem(400)
+
+	&__button
+		background: transparent
+		border: 1px solid $stone
+		box-sizing: border-box
+		color: $taupe
+		cursor: pointer
+		display: block
+		font: 500 #{rem(16 / $ratio)} / 1.5 $sans
+		letter-spacing: .175em
+		margin: rem(50 / $ratio) 0 0
+		padding: rem(13 / $ratio)
+		text-align: center
+		text-transform: uppercase
+		transition: background $speed $ease
+		width: 100%
+		+breakpoint($md)
+			font-size: rem(12)
+			margin: rem(50) auto 0
+			max-width: rem(325)
+			padding: rem(9) rem(25)
+		+breakpoint($lg)
+			display: inline-block
+			margin: rem(45) 0 0
+			width: auto
+
+		&:hover
+			background: $stone
+
+	.slick-arrow
+		align-items: center
+		background: $sand
+		border: none
+		display: none
+		font: 0 / 0 serif
+		height: rem(120)
+		justify-content: center
+		margin: rem(120 / -2) 0 0
+		outline: none
+		padding: 0
+		position: absolute
+		top: rem(200)
+		width: rem(56)
+		z-index: 10
+		+breakpoint($lg)
+			display: flex
+
+		&:before
+			border-bottom: 1px solid $taupe
+			border-right: 1px solid $taupe
+			box-sizing: border-box
+			content: ""
+			display: block
+			height: rem(20)
+			transition: border $speed $ease
+			width: rem(20)
+
+		&:hover
+			&:before
+				border-bottom-color: $stone
+				border-right-color: $stone
+
+	.slick-prev
+		left: rem(-40)
+
+		&:before
+			transform: translateX(25%) rotate(135deg) skew(-6deg, -6deg)
+
+	.slick-next
+		right: rem(-40)
+
+		&:before
+			transform: translateX(-25%) rotate(-45deg) skew(-6deg, -6deg)

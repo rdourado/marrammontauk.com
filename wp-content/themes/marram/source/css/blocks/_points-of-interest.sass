@@ -1,0 +1,141 @@
+.mtk-points-of-interest
+	@extend .mtk-happenings
+	border-top: 1px solid $stone
+	padding: 0 0 rem(100 / $ratio)
+	+breakpoint($md)
+		padding: 0 0 rem(50)
+
+	.wp-block-cover + &
+		border-top: none
+
+	&__title
+		@extend .mtk-happenings__title
+		padding: rem(100 / $ratio) 0 0
+		+breakpoint($md)
+			padding: rem(50) 0 0
+
+	&__lead
+		font: #{rem(30 / $ratio)} / #{rem(40 / $ratio)} $serif
+		margin: 0 0 rem(35 / $ratio)
+		padding: 0
+		+breakpoint($md)
+			font-size: rem(22)
+			line-height: rem(30)
+			margin: 0 0 rem(21)
+
+		&:empty
+			display: none
+
+	&__groups
+		display: flex
+		font: #{rem(30 / $ratio)} / 1.5 $serif
+		font-variant: small-caps
+		justify-content: space-between
+		letter-spacing: .05em
+		list-style: none
+		margin: 0
+		padding: rem(20 / $ratio) 0
+		text-transform: lowercase
+		+breakpoint($md)
+			font-size: rem(22)
+			padding: rem(20) 0
+
+		a,
+		button
+			background: inherit
+			border: none
+			color: inherit
+			display: block
+			font: inherit
+			margin: 0
+			outline: none
+			padding: rem(12 / $ratio) 0
+			transition: color $speed $ease
+			+breakpoint($md)
+				padding: rem(10.5) 0
+			+breakpoint($lg)
+				padding: rem(15.5) 0
+
+			&:hover
+				color: $horizon
+
+	&__title:not(:empty) ~ &__groups
+		border-bottom: 1px solid transparent
+		border-top: 1px solid $stone
+		margin-top: rem(32 / $ratio)
+		+breakpoint($md)
+			margin-top: rem(30.5)
+		+breakpoint($lg)
+			margin-top: rem(35.5)
+
+	&__group--current
+		a,
+		button
+			color: $horizon
+
+	&__body
+		@extend .mtk-happenings__body
+
+	&__map
+		@extend .mtk-happenings__preview
+		border: 1px solid $stone
+		box-sizing: border-box
+		+breakpoint($md)
+			max-width: none
+		+breakpoint($lg)
+			max-width: rem(500)
+
+		&::before
+			display: none
+
+		> div
+			height: rem(475)
+			width: 100%
+			+breakpoint($md)
+				height: rem(450)
+			+breakpoint($lg)
+				height: rem(500)
+
+	&__list
+		@extend .mtk-happenings__list
+
+	&__entry
+		@extend .mtk-happenings__event
+		border-top: 1px solid $stone
+		+breakpoint($md)
+			padding: rem(18) 0
+
+			&:last-child
+				border-bottom: 1px solid $stone
+
+	&__entry--active
+		@extend .mtk-happenings__event--active
+
+	&__name
+		@extend .mtk-happenings__name
+
+		&::before,
+		&::after
+			margin-top: rem(-25 / 2 / $ratio)
+			+breakpoint($md)
+				margin-top: -1px
+
+	&__content
+		@extend .mtk-happenings__content
+		font-style: italic
+		font-weight: normal
+
+		strong
+			font-style: normal
+			font-variant: small-caps
+			font-weight: normal
+			text-transform: lowercase
+
+	&__button
+		@extend .mtk-happenings__button
+
+	&__button,
+	&__content + &__button
+		margin-top: rem(25 / $ratio)
+		+breakpoint($md)
+			margin-top: rem(20)

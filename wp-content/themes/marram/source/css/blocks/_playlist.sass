@@ -1,0 +1,50 @@
+.mtk-playlist
+	@extend .mtk-room-type
+
+	&--active
+		@extend .mtk-room-type--active
+
+	&__header
+		@extend .mtk-room-type__header
+
+	&__name
+		@extend .mtk-room-type__name
+
+	&__content
+		display: none
+		margin: rem(15 / $ratio) 0 rem(75 / $ratio)
+		+breakpoint($md)
+			margin: 0 0 rem(50)
+
+	&--active &__content
+		display: block
+
+	&__meta
+		color: $taupe
+		font: 500 #{rem(18 / $ratio)} / 1 $sans
+		letter-spacing: .175em
+		text-transform: uppercase
+		+breakpoint($md)
+			font-size: rem(14)
+
+	&__description
+		color: $taupe
+		font: #{rem(30 / $ratio)} / #{rem(40 / $ratio)} $serif
+		margin: rem(45 / $ratio) 0 0
+		+breakpoint($md)
+			font-size: rem(22)
+			line-height: rem(30)
+			margin-top: rem(30)
+			max-width: rem(500)
+		+breakpoint($lg)
+			max-width: rem(670)
+
+	&__embed
+		margin: rem(50 / $ratio) 0 0
+		+breakpoint($md)
+			margin-top: rem(50)
+
+		> iframe
+			display: block
+			margin: 0
+			padding: 0

@@ -1,0 +1,138 @@
+.mtk-rotating-quotes
+	background: $sand-dark
+	font: italic #{rem(32 / $ratio)} / #{rem(46 / $ratio)} $serif
+	padding: rem(50 / $ratio)
+	text-align: center
+	+breakpoint($md)
+		font-size: rem(22)
+		line-height: rem(30)
+		padding: rem(50) rem(55)
+	+breakpoint($lg)
+		padding: rem(50) rem(60)
+
+	.mtk-header + &
+		border-top: 1px solid $stone
+
+	p
+		font: inherit
+		margin: 0
+		padding: 0
+		+breakpoint($xl)
+			padding: 0 20%
+
+	&__all-quotes,
+	&__all-sources
+		.slick-arrow
+			+reset-button
+			display: none
+			font: 0 / 0 serif
+			height: rem(28)
+			margin-top: rem(28 * -.55)
+			position: absolute
+			top: 50%
+			width: rem(16)
+			z-index: 10
+			+breakpoint($lg)
+				display: block
+
+			&::before
+				border-bottom: 1px solid $stone
+				border-right: 1px solid $stone
+				box-sizing: border-box
+				content: ""
+				display: block
+				height: rem(15)
+				width: rem(15)
+
+		.slick-prev
+			left: 0
+
+			&::before
+				transform: translateX(25%) rotate(135deg) skew(-6deg, -6deg)
+
+		.slick-next
+			right: 0
+
+			&::before
+				transform: translateX(-25%) rotate(-45deg) skew(-6deg, -6deg)
+
+	&__all-quotes
+		.slick-slide
+			p
+				padding-left: 10%
+				padding-right: 10%
+
+			&::before,
+			&::after
+				color: $stone
+				display: block
+				font: bold #{rem(43)} / 1 $serif
+				pointer-events: none
+				transform: translateY(34%)
+
+			&::before
+				content: "\201C"
+				margin-bottom: .5em
+
+			&::after
+				content: "\201D"
+				margin-top: .5em
+
+	&__quote
+		margin: 0
+		padding: inherit
+
+	&__source,
+	&__all-sources
+		font: 500 rem(22 / $ratio) $sans
+		letter-spacing: .175em
+		margin: rem(50 / $ratio) 0 0
+		+breakpoint($md)
+			font-size: rem(16)
+			margin-top: rem(50)
+
+	&__all-sources &__source
+		margin-top: 0
+
+	&__source
+		color: $horizon
+		display: block
+		padding: 0 1.5em
+		text-transform: uppercase
+		transition: .5s color
+
+		&.slick-slide
+			color: inherit
+			cursor: pointer
+
+		&.slick-current
+			color: $horizon
+			cursor: default
+
+	&__all-sources
+		// .slick-list
+		// 	&::before,
+		// 	&:after
+		// 		bottom: 0
+		// 		content: ""
+		// 		display: block
+		// 		pointer-events: none
+		// 		position: absolute
+		// 		top: 0
+		// 		width: 8%
+		// 		z-index: 5
+
+		// 	&::before
+		// 		background: linear-gradient(to right, $sand-dark, rgba($sand-dark, 0))
+		// 		left: 0
+
+		// 	&:after
+		// 		background: linear-gradient(to left, $sand-dark, rgba($sand-dark, 0))
+		// 		right: 0
+
+		+breakpoint($md)
+			.slick-track
+				display: flex
+				justify-content: center
+				transform: none !important // sass-lint:disable-line no-important
+				width: auto !important // sass-lint:disable-line no-important

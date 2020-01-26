@@ -1,0 +1,21 @@
+@import "inc/functions"
+@import "inc/fonts"
+
+
+body
+	background: $sand
+	color: $taupe
+
+@media (min-width: 600px)
+	.editor-block-list__layout
+		padding-left: 0
+		padding-right: 0
+
+	.block-editor-block-list__layout
+		.block-editor-block-list__block[data-align="full"]
+			margin-left: 0
+			margin-right: 0
+
+			> .block-editor-block-list__block-edit
+				margin-left: -43px
+				margin-right: -43px

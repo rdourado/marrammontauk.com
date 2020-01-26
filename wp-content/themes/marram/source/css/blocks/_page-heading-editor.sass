@@ -1,0 +1,32 @@
+.wp-block-marram-page-heading
+	&__block
+		color: $taupe
+		font: #{rem(30 / $ratio)} / #{rem(40 / $ratio)} $serif
+		+breakpoint($md)
+			font-size: rem(22)
+			line-height: rem(30)
+
+	&::after
+		clear: both
+		content: ""
+		display: table
+
+	& &__title,
+	& &__headline
+		font: inherit
+		line-height: inherit
+		padding: 0
+		+breakpoint($md)
+			max-width: rem(500)
+		+breakpoint($xl)
+			max-width: rem(660)
+
+	& &__title
+		color: $horizon
+		font-variant: small-caps
+		letter-spacing: .05em
+		text-transform: lowercase
+
+	& &__headline
+		color: $taupe
+		margin: 0

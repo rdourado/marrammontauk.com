@@ -1,0 +1,110 @@
+.wp-block-marram-points-of-interest
+	&__block
+		@extend .wp-block-marram-happenings__block
+
+	&__title
+		@extend .wp-block-marram-happenings__title
+
+	&__lead
+		font: #{rem(30 / $ratio)} / #{rem(40 / $ratio)} $serif
+		margin: 0 0 rem(35 / $ratio)
+		+breakpoint($md)
+			font-size: rem(22)
+			line-height: rem(30)
+			margin: 0 0 rem(21)
+
+	&__body
+		@extend .wp-block-marram-happenings__body
+
+	&__groups
+		border-bottom: 1px solid transparent
+		border-top: 1px solid $stone
+		display: flex
+		justify-content: space-around
+
+		&,
+		& > li
+			list-style: none
+			margin: 0
+			padding: 0
+
+	&__groups
+		display: flex
+		font-variant: small-caps
+		justify-content: space-between
+		margin-top: rem(32 / $ratio)
+		+breakpoint($md)
+			margin-top: rem(30.5)
+		+breakpoint($lg)
+			margin-top: rem(35.5)
+
+		&,
+		& > li
+			color: inherit
+			cursor: default
+			font: #{rem(30 / $ratio)} / 1.5 $serif
+			letter-spacing: .05em
+			list-style: none
+			margin: 0
+			padding: 0
+			text-transform: lowercase
+			+breakpoint($md)
+				font-size: rem(22)
+
+		& > li
+			padding: rem(32 / $ratio) 0
+			+breakpoint($md)
+				padding: rem(30.5) 0
+			+breakpoint($lg)
+				padding: rem(35.5) 0
+
+	&__map
+		@extend .wp-block-marram-happenings__preview
+		background-color: $stone
+		border: 1px solid $stone
+		box-sizing: border-box
+		height: rem(475)
+		+breakpoint($md)
+			height: rem(450)
+			max-width: none
+		+breakpoint($lg)
+			height: rem(500)
+			max-width: rem(500)
+
+		&::before
+			display: none
+
+	& &__list
+		@extend .wp-block-marram-happenings__list
+
+	& &__entry
+		@extend .wp-block-marram-happenings__event
+		+breakpoint($md)
+			border-top: 1px solid $stone
+			padding: rem(18) 0
+
+			&:last-child
+				border-bottom: 1px solid $stone
+
+	& &__name
+		@extend .wp-block-marram-happenings__name
+
+	&__content
+		@extend .wp-block-marram-happenings__content
+		font-style: italic
+		font-weight: normal
+
+		strong
+			font-style: normal
+			font-variant: small-caps
+			font-weight: normal
+			text-transform: lowercase
+
+	&__button
+		@extend .wp-block-marram-happenings__button
+
+	&__button,
+	&__content + &__button
+		margin-top: rem(25 / $ratio)
+		+breakpoint($md)
+			margin-top: rem(20)

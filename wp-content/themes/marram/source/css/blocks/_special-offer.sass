@@ -1,0 +1,92 @@
+.mtk-special-offers
+	background: $sand-dark
+	position: relative
+
+	&:before,
+	&:after
+		border-top: 1px solid $stone
+		content: ""
+		display: block
+		left: 0
+		position: absolute
+		right: 0
+
+	&:before
+		top: 0
+
+	&:after
+		bottom: -1px
+
+	.slick-arrow
+		align-items: center
+		background: $sand-dark
+		border: none
+		display: flex
+		font: 0 / 0 serif
+		height: rem(120)
+		justify-content: center
+		margin: rem(120 / -2) 0 0
+		outline: none
+		padding: 0
+		pointer-events: none
+		position: absolute
+		top: 50%
+		visibility: hidden
+		width: rem(56)
+		z-index: 10
+		+breakpoint($md)
+			pointer-events: auto
+			visibility: visible
+
+		&:before
+			border-bottom: 1px solid $taupe
+			border-right: 1px solid $taupe
+			box-sizing: border-box
+			content: ""
+			display: block
+			height: rem(20)
+			transition: border $speed $ease
+			width: rem(20)
+
+		&:hover
+			&:before
+				border-bottom-color: $stone
+				border-right-color: $stone
+
+	.slick-prev
+		left: 0
+
+		&:before
+			transform: translateX(25%) rotate(135deg) skew(-6deg, -6deg)
+
+	.slick-next
+		right: 0
+
+		&:before
+			transform: translateX(-25%) rotate(-45deg) skew(-6deg, -6deg)
+
+.mtk-special-offer
+	@extend .mtk-fifty-fifty
+
+	.mtk-special-offers &
+		border-top: 1px solid $stone
+
+	.slick-initialized &.slick-slide
+		+breakpoint($lg)
+			display: flex
+
+	&__body
+		@extend .mtk-fifty-fifty__body
+
+	&__image
+		@extend .mtk-fifty-fifty__image
+
+	&__title
+		@extend .mtk-fifty-fifty__title
+		color: $horizon
+
+	&__content
+		@extend .mtk-fifty-fifty__content
+
+	&__button
+		@extend .mtk-fifty-fifty__button

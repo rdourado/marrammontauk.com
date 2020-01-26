@@ -1,0 +1,78 @@
+.mtk-highlights
+	@extend .mtk-happenings
+
+	&__title
+		@extend .mtk-happenings__title
+
+	&__body
+		+breakpoint($lg)
+			display: flex
+			margin: 0 rem(-20)
+
+	&__entry
+		margin: rem(50 / $ratio) 0 rem(100 / $ratio)
+		+breakpoint($md)
+			margin: rem(50) 0 rem(100)
+
+			& + &
+				border-top: 1px solid $stone
+				margin-top: rem(-50)
+				padding: rem(50) 0 0
+		+breakpoint($lg)
+			flex-grow: 0
+			width: calc(#{percentage(1 / 3)} - #{rem(40)})
+
+			&,
+			& + &
+				border: none
+				margin: 0 rem(20)
+				padding: 0
+
+	&__image
+		margin: 0 0 rem(50 / $ratio)
+		padding: 0
+		position: relative
+
+		&::before
+			content: ""
+			display: block
+			padding-top: percentage(300 / 540)
+			+breakpoint($md)
+				padding-top: percentage(350 / 658)
+			+breakpoint($lg)
+				padding-top: 95%
+
+		img
+			display: block
+			height: 100%
+			left: 0
+			object-fit: cover
+			position: absolute
+			top: 0
+			width: 100%
+
+	&__name
+		color: $horizon
+		float: left
+		font: bold #{rem(30 / $ratio)} / #{rem(40 / $ratio)} $sans
+		margin: 0 .25em 0 0
+		padding: 0
+		text-transform: uppercase
+		+breakpoint($md)
+			font-size: rem(22)
+			line-height: rem(30)
+
+	&__content
+		color: $taupe
+		font: #{rem(30 / $ratio)} / #{rem(40 / $ratio)} $serif
+		margin: 0
+		padding: 0
+		+breakpoint($md)
+			font-size: rem(22)
+			line-height: rem(30)
+
+	&__button
+		@extend .mtk-fifty-fifty__button
+		margin-top: rem(50 / $ratio)
+		+breakpoint($md)
+			margin-top: rem(50)

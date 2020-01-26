@@ -1,0 +1,40 @@
+.mtk-page-heading
+	color: $taupe
+	font: #{rem(30 / $ratio)} / #{rem(40 / $ratio)} $serif
+	margin: rem(100 / $ratio) rem(50 / $ratio)
+	+breakpoint($md)
+		font-size: rem(22)
+		line-height: rem(30)
+		margin: rem(75) rem(55)
+	+breakpoint($lg)
+		margin: rem(75) rem(60)
+
+	&::after
+		clear: both
+		content: ""
+		display: table
+
+	&__title,
+	&__headline
+		padding: 0
+		+breakpoint($md)
+			max-width: rem(500)
+		+breakpoint($xl)
+			max-width: rem(660)
+
+	&__title
+		color: $horizon
+		float: left
+		font: bold #{rem(30 / $ratio)} / #{rem(40 / $ratio)} $sans
+		letter-spacing: .05em
+		margin: 0 .3em 0 0
+		text-transform: uppercase
+		+breakpoint($md)
+			font-size: rem(22)
+			line-height: rem(30)
+
+	&__headline
+		color: $taupe
+		font: inherit
+		line-height: inherit
+		margin: 0

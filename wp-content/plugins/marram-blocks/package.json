@@ -1,0 +1,112 @@
+{
+	"name": "marram-gutenberg-blocks",
+	"version": "1.0.0",
+	"main": "build/index.js",
+	"repository": "https://github.com/parafernalia/marram-website",
+	"author": "Rafael Dourado <rafael.dourado@parafernalia.net.br>",
+	"license": "MIT",
+	"private": true,
+	"scripts": {
+		"start": "wp-scripts start",
+		"build": "wp-scripts build"
+	},
+	"babel": {
+		"presets": [
+			"@wordpress/default"
+		],
+		"plugins": [
+			"@babel/plugin-proposal-class-properties"
+		]
+	},
+	"prettier": {
+		"printWidth": 100,
+		"tabWidth": 4,
+		"useTabs": true,
+		"semi": false,
+		"singleQuote": true,
+		"trailingComma": "es5",
+		"endOfLine": "lf",
+		"bracketSpacing": true,
+		"jsxBracketSameLine": false
+	},
+	"eslintConfig": {
+		"env": {
+			"browser": true,
+			"es6": true
+		},
+		"extends": [
+			"plugin:@wordpress/eslint-plugin/recommended",
+			"plugin:prettier/recommended"
+		],
+		"globals": {
+			"Atomics": "readonly",
+			"SharedArrayBuffer": "readonly",
+			"wp": "readonly"
+		},
+		"parserOptions": {
+			"ecmaFeatures": {
+				"jsx": true
+			},
+			"ecmaVersion": 2018,
+			"sourceType": "module"
+		},
+		"plugins": [
+			"react"
+		],
+		"rules": {
+			"no-console": [
+				"warn"
+			],
+			"indent": [
+				"error",
+				"tab"
+			],
+			"linebreak-style": [
+				"error",
+				"unix"
+			],
+			"quotes": [
+				"error",
+				"single"
+			],
+			"semi": [
+				"error",
+				"never"
+			],
+			"react/jsx-curly-spacing": [
+				2,
+				"never"
+			],
+			"arrow-parens": [
+				2,
+				"as-needed"
+			],
+			"no-multiple-empty-lines": [
+				"error",
+				{
+					"max": 2,
+					"maxEOF": 1,
+					"maxBOF": 1
+				}
+			]
+		}
+	},
+	"devDependencies": {
+		"@babel/core": "^7.4.4",
+		"@babel/plugin-proposal-class-properties": "^7.4.4",
+		"@wordpress/babel-preset-default": "^4.1.0",
+		"@wordpress/eslint-plugin": "^2.1.0",
+		"@wordpress/scripts": "3.1.0",
+		"classnames": "^2.2.6",
+		"css-element-queries": "^1.2.0",
+		"eslint": "^5.16.0",
+		"eslint-config-prettier": "^4.2.0",
+		"eslint-plugin-prettier": "^3.0.1",
+		"lodash": "^4.17.11",
+		"moment": "^2.24.0",
+		"prettier": "1.17.0",
+		"react": "^16.8.6",
+		"react-dom": "^16.8.6",
+		"showdown": "^1.9.0"
+	}
+}

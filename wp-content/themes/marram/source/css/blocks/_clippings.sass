@@ -1,0 +1,95 @@
+.mtk-clippings
+	border-bottom: 1px solid $stone
+	padding-top: rem(50)
+	position: relative
+	+breakpoint($md)
+		padding-top: rem(60)
+	+breakpoint($lg)
+		padding-top: rem(70)
+
+	&__entries-list
+		list-style: none
+		margin: 0
+		padding: 0 rem(50 / $ratio)
+		+breakpoint($md)
+			display: grid
+			grid-column-gap: rem(16)
+			grid-template-columns: repeat(2, 1fr)
+			padding: rem(50) rem(55) 0
+		+breakpoint($lg)
+			grid-template-columns: repeat(3, 1fr)
+			padding: rem(50) rem(60) 0
+
+	&__entry
+		align-items: center
+		display: flex
+		flex-direction: column
+		margin: rem(20) 0 rem(80)
+		+breakpoint($md)
+			margin: 0 0 rem(60)
+
+	&__preview
+		margin: 0
+		overflow: hidden
+		padding: 0
+		position: relative
+		width: 100%
+
+		&::before
+			content: ""
+			display: block
+			padding-top: percentage(228 / 322)
+
+	&__image
+		display: block
+		height: auto
+		left: 0
+		min-height: 100%
+		object-fit: cover
+		position: absolute
+		top: 0
+		width: 100%
+
+	&__caption
+		display: none
+
+	&__excerpt
+		font: #{rem(18)} / 1.6 $serif
+		margin: 0
+		padding: 0
+		text-align: center
+		+breakpoint($md)
+			font-size: rem(22)
+			min-height: calc(#{1.6em * 5} + #{rem(43) * 2})
+
+		&::before,
+		&::after
+			color: $stone
+			display: block
+			font: bold #{rem(43)} / 1 $serif
+			pointer-events: none
+			transform: translateY(34%)
+
+		&::before
+			content: "\201C"
+
+		&::after
+			content: "\201D"
+
+		p
+			font: inherit
+			margin: 0
+			padding: 0
+
+	&__button
+		color: $stone
+		display: block
+		font: 500 rem(12) $sans
+		letter-spacing: .175em
+		margin: rem(20) 0 0
+		text-align: center
+		text-transform: uppercase
+		transition: color $speed $ease
+
+		&:hover
+			color: $horizon

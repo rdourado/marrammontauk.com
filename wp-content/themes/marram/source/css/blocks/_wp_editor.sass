@@ -1,0 +1,60 @@
+.wp-block-heading
+	h2,
+	h3,
+	h4
+		color: $horizon
+		font: 500 rem(9) $sans
+		letter-spacing: .175em
+		text-transform: uppercase
+		+breakpoint($md)
+			font-size: rem(12)
+		+breakpoint($xl)
+			font-size: rem(13)
+
+
+.wp-block-gallery.is-style-carousel-single
+	> .blocks-gallery-item
+		margin: 0
+		width: 100%
+
+		+ .blocks-gallery-item
+			margin-top: 4px
+
+		.editor-rich-text
+			visibility: hidden
+
+		img
+			display: block
+			height: 50vh
+			max-height: 100%
+			max-width: 100vw
+			min-height: rem(264)
+			object-fit: cover
+			width: 100%
+			+breakpoint($md)
+				min-height: rem(530)
+
+
+.wp-block-cover
+	min-height: rem(275)
+	+breakpoint($md)
+		min-height: rem(500)
+
+	.wp-block-cover-text
+		font: 500 rem(8.82) $sans
+		letter-spacing: .175em
+		text-transform: uppercase
+		+breakpoint($md)
+			font-size: rem(13)
+			line-height: rem(24)
+
+		a,
+		em,
+		strong
+			color: inherit
+			display: inline-block
+			font: 500 rem(45, 1.05) $sans
+			letter-spacing: .05em
+			text-decoration: none
+			+breakpoint($md)
+				font-size: rem(69)

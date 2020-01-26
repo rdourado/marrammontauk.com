@@ -1,0 +1,144 @@
+.mtk-nav
+	align-items: center
+	background: $taupe
+	bottom: 0
+	color: $sand
+	display: none
+	left: 0
+	overflow: auto
+	position: fixed
+	top: 0
+	width: 100vw
+	z-index: 10
+
+	.admin-bar &
+		margin-top: 32px
+		@media screen and (max-width: 782px)
+			margin-top: 46px
+		+breakpoint($lg)
+			margin-top: 0
+
+
+	&--active
+		border-top: 1px solid $sand
+		display: block
+		top: calc(#{rem(75 / $ratio)} - 1px)
+		+breakpoint($md)
+			top: calc(#{rem(60)} - 1px)
+
+	+breakpoint($lg)
+		&,
+		&--active
+			background: transparent
+			display: block
+			flex-grow: 1
+			position: static
+			width: auto
+
+	&__body
+		align-items: center
+		box-sizing: border-box
+		display: flex
+		flex-direction: column
+		justify-content: center
+		min-height: 100%
+		padding: rem((125 - 35) / $ratio) 0 rem(50 / $ratio)
+		+breakpoint($md)
+			padding: rem(100) 0 rem(75)
+		+breakpoint($lg)
+			display: block
+			height: auto
+			padding: 0
+
+	&__menu
+		font: bold #{rem(28 / $ratio)} / 1.5 $sans
+		letter-spacing: .175em
+		list-style: none
+		margin: 0 auto
+		padding: 0
+		text-align: center
+		text-transform: uppercase
+		+breakpoint($md)
+			font-size: rem(25)
+		+breakpoint($lg)
+			color: $taupe
+			display: flex
+			font: #{rem(12)} / 3.25 $sans
+			justify-content: flex-end
+			letter-spacing: .175em
+			margin: 0
+			position: relative
+			text-transform: uppercase
+			top: -1px
+
+		a
+			display: block
+			transition: color $speed $ease
+
+		a:hover
+			color: $stone
+
+		.current-menu-item a,
+		.current_page_parent a, // sass-lint:disable-line class-name-format
+		.current-page-ancestor a
+			color: $horizon
+
+		.menu-item ~ .menu-item
+			margin-top: 1.85em
+
+		.menu-item
+			+breakpoint($lg)
+				margin-left: 2.25em
+
+				~ .menu-item
+					margin-top: 0
+
+		.mtk-js-toggle-reserve-form
+			display: none
+			+breakpoint($lg)
+				display: block
+
+	&__footer
+		font: italic #{rem(25 / $ratio)} / #{rem(40 / $ratio)} $serif
+		letter-spacing: .05em
+		margin: rem(105 / $ratio) 0 0
+		text-align: center
+		+breakpoint($md)
+			font-size: rem(18)
+			line-height: rem(30)
+			margin: rem(95) 0 0
+		+breakpoint($lg)
+			display: none
+
+	&__logo
+		margin: 0 auto rem(45 / $ratio)
+		width: rem(66 / $ratio)
+		+breakpoint($md)
+			margin-bottom: rem(35)
+			width: rem(58)
+
+	&__title
+		font: inherit
+		margin: 0 0 .15em
+		padding: 0
+
+	&__email b
+		font-style: normal
+		font-variant: small-caps
+		font-weight: normal
+		text-transform: lowercase
+
+	&__phone,
+	&__location
+		display: inline-block
+		font: 0 / 0 serif
+		margin: rem(45 / $ratio) rem(20 / $ratio) 0
+		vertical-align: middle
+		+breakpoint($md)
+			margin: rem(35) rem(15) 0
+
+	&__phone
+		+sprite($phone)
+
+	&__location
+		+sprite($pin)

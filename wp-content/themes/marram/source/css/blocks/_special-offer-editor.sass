@@ -1,0 +1,30 @@
+.wp-block-marram-special-offer
+	&__block
+		@extend .wp-block-marram-fifty-fifty__block
+
+	&__body
+		@extend .wp-block-marram-fifty-fifty__body
+
+		&::before
+			color: $horizon
+			content: "Special Offers"
+			display: block
+			font: 500 #{rem(18 / $ratio)} / 1 $sans
+			letter-spacing: .175em
+			margin: 0 0 rem(50 / $ratio)
+			text-transform: uppercase
+			+breakpoint($md)
+				font-size: rem(14)
+				margin-bottom: rem(40)
+
+	&__image
+		@extend .wp-block-marram-fifty-fifty__image
+
+	& &__title
+		@extend .wp-block-marram-fifty-fifty__title
+
+	& &__content
+		@extend .wp-block-marram-fifty-fifty__content
+
+	& &__button
+		@extend .wp-block-marram-fifty-fifty__button

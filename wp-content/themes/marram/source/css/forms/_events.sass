@@ -1,0 +1,134 @@
+.wpcf7-form
+	display: block
+	margin: 0 rem(50 / $ratio) rem(100 / $ratio)
+	+breakpoint($md)
+		margin: 0 rem(55) rem(100)
+
+	&__field
+		border-bottom: 1px solid $taupe
+		color: $taupe
+		display: flex
+		font: #{rem(26 / $ratio)} / #{rem(36 / $ratio)} $serif
+		margin: 0 0 rem(55 / $ratio)
+		+breakpoint($md)
+			font-size: rem(20)
+			line-height: rem(30)
+
+		label
+			color: inherit
+			cursor: pointer
+			display: inline-block
+			flex-shrink: 0
+			font: inherit
+			font-variant: small-caps
+			padding: 0 .5em 0 0
+			text-transform: lowercase
+			+breakpoint($md)
+				letter-spacing: .05em
+
+		.wpcf7-form-control-wrap
+			display: flex
+			flex-basis: 100%
+			flex-grow: 1
+
+		input,
+		select,
+		textarea
+			appearance: none
+			background: transparent
+			border: none
+			color: inherit
+			display: inline-block
+			flex-grow: 1
+			font: inherit
+			margin: 0
+			outline: none
+			padding: 0
+			width: 100%
+
+		textarea
+			height: (36em / 26 * 3)
+
+		&--description
+			display: block
+
+			label
+				border-bottom: 1px solid $taupe
+				display: block
+				font-style: italic
+				font-variant: normal
+				margin-top: rem(95 / $ratio)
+				text-transform: none
+				+breakpoint($md)
+					margin-top: rem(70)
+
+		+breakpoint($md)
+			&--state
+				float: left
+				width: 50%
+
+			&--state + &
+				margin-left: 50%
+				width: 50%
+
+		+breakpoint($lg)
+			&--state
+				float: left
+				width: calc(25% - #{rem(15)})
+
+			&--state + &
+				float: left
+				margin-left: 0
+				width: calc(25% - #{rem(15)})
+
+			&--name,
+			&--company,
+			&--address,
+			&--city
+				float: left
+				width: calc(50% - #{rem(30)})
+
+			&--name + &,
+			&--company + &,
+			&--address + &,
+			&--city + &,
+			&--state + & + &
+				float: none
+				margin-left: calc(50% + #{rem(30)})
+				width: calc(50% - #{rem(30)})
+
+	&.sent &__field,
+	&.sent .wpcf7-submit
+		display: none
+
+	.wpcf7-response-output
+		color: $taupe
+		font: #{rem(26 / $ratio)} / #{rem(36 / $ratio)} $serif
+		margin: rem(55 / $ratio) 0 0
+		+breakpoint($md)
+			font-size: rem(20)
+			line-height: rem(30)
+
+.wpcf7-submit
+	background: transparent
+	border: 1px solid $stone
+	box-sizing: border-box
+	color: $taupe
+	cursor: pointer
+	display: block
+	font: 500 #{rem(16 / $ratio)} / 1.5 $sans
+	letter-spacing: .175em
+	margin: rem(75 / $ratio) 0 0
+	outline: none
+	padding: rem(13 / $ratio)
+	text-align: center
+	text-transform: uppercase
+	width: 100%
+	+breakpoint($md)
+		font-size: rem(12)
+		padding: rem(9) rem(35)
+		width: auto
+
+.screen-reader-response,
+.wpcf7-not-valid-tip
+	display: none !important // sass-lint:disable-line no-important

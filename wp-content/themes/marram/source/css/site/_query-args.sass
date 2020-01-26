@@ -1,0 +1,119 @@
+.mtk-query-args
+	background: $sand
+	border-bottom: 1px solid $stone
+	border-top: 1px solid $stone
+	display: flex
+	font: #{rem(12)} / 2 $sans
+	justify-content: space-between
+	left: 0
+	letter-spacing: .175em
+	padding: 0 rem(50 / $ratio) 0 0
+	position: absolute
+	right: 0
+	text-transform: uppercase
+	top: 0
+	z-index: 5
+	+breakpoint($md)
+		padding-right: rem(55)
+	+breakpoint($lg)
+		padding-right: rem(60)
+
+	&--sticky
+		border-top: none
+		position: fixed
+		top: rem(50)
+		+breakpoint($md)
+			top: rem(60)
+		+breakpoint($lg)
+			top: rem(70)
+
+		.admin-bar &
+			margin-top: 32px
+			@media screen and (max-width: 782px)
+				margin-top: 46px
+
+
+	&__wrapper
+		align-items: flex-start
+		background: $sand
+		border-right: 1px solid $stone
+		display: flex
+		padding: 0 0 0 rem(50 / $ratio)
+		+breakpoint($md)
+			padding-left: rem(55)
+		+breakpoint($lg)
+			padding-left: rem(60)
+
+		&::after
+			border: 1px solid $stone
+			border-left-color: transparent
+			border-top-color: transparent
+			content: ""
+			display: block
+			margin: rem(18) rem(20) 0 rem(15)
+			padding: 3px
+			transform: rotate(45deg)
+			+breakpoint($md)
+				margin-top: rem(23)
+			+breakpoint($lg)
+				margin-top: rem(27)
+
+		&:hover
+			border-bottom: 1px solid $stone
+			position: absolute
+			top: 0
+
+			&::after
+				transform: translateY(50%) rotate(225deg)
+
+	&__title
+		display: inline-block
+		font: inherit
+		margin: 0 .5em 0 0
+		padding: rem(22 - 10) 0
+		pointer-events: none
+		+breakpoint($md)
+			padding: rem(22 - 5) 0
+		+breakpoint($lg)
+			padding: rem(22) 0
+
+	&__params
+		display: flex
+		flex-direction: column
+		list-style: none
+		margin: 0
+		padding: rem(20 - 10) 0
+		+breakpoint($md)
+			padding: rem(20 - 5) 0
+		+breakpoint($lg)
+			padding: rem(20) 0
+
+	&__order
+		display: none
+		padding: rem(2) 0
+
+	&__order--current
+		display: block
+		order: -1
+		pointer-events: none
+
+	&__wrapper:hover &__order
+		display: block
+
+	&__pagination
+		margin: auto 0 auto auto
+		padding: rem(22 - 10) 0
+		word-spacing: 1em
+		+breakpoint($md)
+			padding: rem(22 - 5) 0
+		+breakpoint($lg)
+			padding: rem(22) 0
+
+		.prev,
+		.next
+			display: none
+			+breakpoint($md)
+				display: inline
+
+		.current
+			cursor: default

@@ -1,0 +1,74 @@
+.wp-block
+	max-width: 1100px
+
+
+.wp-block-heading
+	h1,
+	h2,
+	h3,
+	h4
+		color: $horizon
+		font: #{rem(30 / $ratio)} / #{rem(40 / $ratio)} $serif
+		font-variant: small-caps
+		margin: 0
+		padding: rem(50 / $ratio / 2) 0
+		text-transform: lowercase
+		+breakpoint($md)
+			font-size: rem(22)
+			line-height: rem(30)
+			padding: rem(50 / 2) 0
+		+breakpoint($lg)
+			max-width: rem(675)
+
+		&.is-style-sans-serif
+			font: 500 #{rem(18 / $ratio)} / 1 $sans
+			letter-spacing: .175em
+			text-transform: uppercase
+			+breakpoint($md)
+				font-size: rem(14)
+
+		&.is-style-subtitle
+			color: $taupe
+
+
+.wp-block-image
+	figcaption
+		color: $taupe
+		font: rem(16 / $ratio) $serif
+		margin: 0
+		padding: 1em 0 0
+		text-align: right
+		+breakpoint($md)
+			font-size: rem(12)
+
+
+.wp-block-cover
+	.wp-block-paragraph
+		font: bold 10.5vw / 1.035 $serif !important // sass-lint:disable-line no-important
+		margin: 0
+		padding: 0
+		text-align: center
+		text-transform: uppercase
+		width: 100%
+		+breakpoint($md)
+			font-size: rem(69) !important // sass-lint:disable-line no-important
+		+breakpoint($lg)
+			font-size: rem(75) !important // sass-lint:disable-line no-important
+
+		b
+			font: inherit
+			text-transform: inherit
+
+		em,
+		strong
+			display: block
+			font: 500 .211764706em $sans
+			letter-spacing: .175em
+			margin-bottom: .3em
+
+			+ br
+				display: none
+			+breakpoint($md)
+				font-size: rem(16)
+			+breakpoint($lg)
+				font-size: rem(18)

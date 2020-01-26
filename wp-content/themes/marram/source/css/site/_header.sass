@@ -1,0 +1,122 @@
+.mtk-header
+	align-items: center
+	background: inherit
+	border-bottom: 1px solid transparent
+	box-sizing: border-box
+	display: flex
+	left: 0
+	min-height: rem(75 / $ratio)
+	padding: 0 rem(50 / $ratio)
+	position: fixed
+	top: 0
+	transition: border $speed $ease
+	width: 100vw
+	z-index: 15
+	+breakpoint($md)
+		min-height: rem(60)
+		padding: 0 rem(30)
+	+breakpoint($lg)
+		min-height: rem(70)
+		padding: 0 rem(60)
+
+	&--sticky
+		border-bottom-color: $stone
+		position: fixed
+
+	.admin-bar &
+		top: 32px
+		@media screen and (max-width: 782px)
+			top: 46px
+		@media screen and (max-width: 600px)
+			position: absolute
+			top: 0
+
+
+	&--normal
+		&,
+		.admin-bar &
+			position: absolute
+			top: 0
+
+	&--active
+		+breakpoint($lg, true)
+			background: $taupe
+			border-bottom-color: $stone
+			left: 0
+			position: fixed
+			top: 0
+			z-index: 5
+
+	&__logo
+		color: $horizon
+		margin: 0 auto 0 0
+		padding: 0
+		position: relative
+		width: rem(154 / $ratio)
+		z-index: 15
+		+breakpoint($md)
+			width: rem(115)
+		+breakpoint($lg)
+			width: rem(122)
+
+	&--active &__logo
+		color: $sand
+		+breakpoint($lg)
+			color: $horizon
+
+	&__toggle
+		background: transparent
+		border: none
+		box-sizing: content-box
+		flex-shrink: 0
+		font: 0 / 0 serif
+		margin: 0 rem(-20 / $ratio)
+		outline: none
+		padding: rem(20 / $ratio)
+		position: relative
+		width: rem(35 / $ratio)
+		z-index: 15
+		+breakpoint($md)
+			margin: 0 rem(-20)
+			padding: rem(20)
+			width: rem(30)
+		+breakpoint($lg)
+			display: none
+
+		span
+			border-top: 1px solid $taupe
+			display: block
+			transition:  border $speed $ease, opacity $speed $ease, transform $speed $ease
+
+		span + span
+			margin-top: rem(floor(10 / $ratio))
+			+breakpoint($md)
+				margin-top: rem(8)
+
+	&--active &__toggle
+		span
+			border-top-color: $sand
+
+			&:nth-child(1)
+				transform: translateY(#{rem(8)}) rotate(45deg)
+
+			&:nth-child(3)
+				transform: translateY(#{rem(-6.5)}) rotate(-45deg)
+
+			&:nth-child(2)
+				opacity: 0
+
+	> .menu-item
+		font: 500 rem(20 / $ratio) $sans
+		letter-spacing: .175em
+		margin: 0 rem(28 / $ratio) 0 0
+		padding: 0
+		text-transform: uppercase
+		+breakpoint($md)
+			font-size: rem(16)
+			margin: 0 rem(28) 0 0
+		+breakpoint($lg)
+			display: none
+
+	&--active > .menu-item
+		display: none

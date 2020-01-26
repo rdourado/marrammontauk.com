@@ -1,0 +1,80 @@
+.single,
+.blog
+	> h1
+		font: bold #{rem(60 / $ratio)} / #{rem(67 / $ratio)} $serif
+		text-transform: uppercase
+		+breakpoint($md)
+			font-size: rem(69)
+			line-height: rem(75)
+		+breakpoint($lg)
+			font-size: rem(75)
+			line-height: rem(80)
+
+		em,
+		strong
+			font-style: italic
+			font-weight: normal
+			text-transform: none
+
+	> h1,
+	> p:not(.mtk-text-module):not(.mtk-breadcrumbs)
+		+breakpoint($lg)
+			max-width: rem(975)
+
+	> p:not(.mtk-text-module):not(.mtk-breadcrumbs)
+		> strong
+			color: $horizon
+
+			+ strong
+				color: inherit
+
+		> a
+			font-style: italic
+			text-decoration: underline
+			transition: color $speed $ease
+
+			&:hover
+				color: $stone
+
+	> .wp-block-columns
+		display: block
+		+breakpoint($md)
+			display: block
+		+breakpoint($lg)
+			display: flex
+
+		> .wp-block-column
+			margin-left: 0
+			width: auto
+			+breakpoint($md)
+				margin-left: 0
+				width: auto
+			+breakpoint($lg)
+				&:not(:first-child)
+					margin-left: rem(32)
+
+		&.has-2-columns > .wp-block-column
+			+breakpoint($lg)
+				width: calc(50% - #{rem(16)})
+
+		&.has-3-columns > .wp-block-column
+			+breakpoint($lg)
+				width: calc(#{100% / 3} - #{rem(16)})
+
+		.wp-block-image
+			margin-top: rem(30)
+
+			&:first-child
+				margin-top: 0
+
+			img
+				display: block
+				height: auto
+				max-height: none
+				width: 100%
+
+			figcaption
+				display: none
+				+breakpoint($md)
+					display: block
+					font: rem(12) $serif

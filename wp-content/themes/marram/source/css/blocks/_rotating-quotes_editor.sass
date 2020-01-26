@@ -1,0 +1,41 @@
+.wp-block-marram-rotating-quotes
+	border-bottom: 1px solid $stone
+	border-top: 1px solid $stone
+	font: italic rem(18, rem(21)) $serif
+	padding: (gut($sm) * .8) 0
+	text-align: center
+	+breakpoint($md)
+		font-size: rem(26)
+		line-height: rem(32)
+	+breakpoint($md)
+		padding: (gut($md) * .8) 0
+	+breakpoint($xl)
+		padding: (gut($xl) * .8) 0
+
+	blockquote
+		margin: 0
+		padding: inherit
+
+	p
+		font: inherit
+		margin: 0
+		padding: 0
+		+breakpoint($xl)
+			padding: 0 5%
+
+	cite
+		color: $horizon
+		display: block
+		font: 500 rem(18, rem(21)) $sans
+		font-variant: small-caps
+		letter-spacing: .175em
+		margin-top: 1em
+		text-transform: lowercase
+		+breakpoint($md)
+			font-size: rem(18)
+			font-variant: normal
+			line-height: rem(24)
+			text-transform: uppercase
+
+		&[data-is-placeholder-visible="true"]
+			margin-top: 0

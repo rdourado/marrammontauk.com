@@ -1,0 +1,77 @@
+%mtk-rooms-group,
+.mtk-rooms-group
+	margin: 0 rem(50 / $ratio) rem(75 / $ratio)
+	+breakpoint($md)
+		margin: 0 rem(55) rem(50)
+
+		body > h2 + &
+			margin-top: rem(-50)
+	+breakpoint($lg)
+		margin: 0 rem(60) rem(60)
+
+		body > h2 + &
+			margin-top: rem(-40)
+
+	& + &
+		border-top: 1px solid $stone
+		margin-top: rem(-75 / $ratio)
+		+breakpoint($md)
+			margin-top: rem(-50)
+		+breakpoint($lg)
+			margin-top: rem(-60)
+
+	&__header
+		align-items: center
+		box-sizing: border-box
+		cursor: pointer
+		display: flex
+		min-height: rem(125 / $ratio)
+		padding: rem(20 / $ratio) 0
+		position: relative
+		+breakpoint($md)
+			min-height: 0
+			padding: rem(50) 0
+		+breakpoint($lg)
+			padding: rem(40) 0
+
+		&:before,
+		&:after
+			border-top: 1px solid $taupe
+			content: ""
+			display: block
+			position: absolute
+			right: 0
+			top: 50%
+			width: rem(28 / $ratio)
+			+breakpoint($md)
+				width: rem(20)
+
+		&:after
+			transform: rotate(90deg)
+
+	&--active &__header:before
+		transform: rotate(45deg)
+
+	&--active &__header:after
+		transform: rotate(135deg)
+
+	&__name
+		color: $taupe
+		font: bold #{rem(30 / $ratio)} / 1 $sans
+		letter-spacing: .075em
+		margin: 0
+		padding: 0
+		text-transform: uppercase
+		+breakpoint($md)
+			font-size: rem(22)
+
+	&--active &__name
+		color: $stone
+
+.mtk-rooms-group
+	+next-siblings(".mtk-room-type")
+		display: none
+
+	&--active
+		+next-siblings(".mtk-room-type")
+			display: block

@@ -1,0 +1,25 @@
+.mtk-breadcrumbs
+	color: $taupe
+	cursor: default
+	font: #{rem(30 / $ratio)} / 1.33333 $serif
+	font-variant: small-caps
+	letter-spacing: .05em
+	margin: rem(100 / $ratio) rem(50 / $ratio)
+	text-transform: lowercase
+	+breakpoint($md)
+		font-size: rem(22)
+		margin: rem(50) rem(55) rem(75)
+	+breakpoint($lg)
+		margin: rem(50) rem(60) rem(75)
+
+	a
+		color: inherit
+		cursor: pointer
+		transition: color $speed $ease
+
+	a:hover
+		color: $stone
+
+	strong
+		color: $stone
+		font: inherit

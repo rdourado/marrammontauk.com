@@ -1,0 +1,172 @@
+.mtk-nav-menu
+	background: $sand
+	border-bottom: 1px solid $stone
+	border-top: 1px solid $stone
+	display: flex
+	flex-direction: column
+	list-style: none
+	position: relative
+	+breakpoint($lg)
+		flex-direction: row
+		justify-content: space-between
+
+	&:before
+		background-image: url("../img/explore-montauk.svg")
+		background-position: left center
+		background-repeat: no-repeat
+		background-size: contain
+		content: ""
+		display: inline-block
+		height: rem(15)
+		margin: auto auto auto 0
+		position: absolute
+		top: rem(12)
+		width: rem(290)
+		+breakpoint($md)
+			top: rem(17)
+		+breakpoint($lg)
+			position: static
+
+		.mtk-page-dine &
+			background-image: url("../img/mostrador-marram.svg")
+
+	&,
+	&__holder
+		font: #{rem(26 / $ratio)} / 1.5 $sans
+		font-variant: small-caps
+		letter-spacing: .175em
+		margin: 0 rem(50 / $ratio)
+		padding: 0
+		text-transform: lowercase
+		+breakpoint($md)
+			font-size: rem(20)
+			margin: 0 rem(30)
+			padding: 0 rem(25)
+		+breakpoint($lg)
+			color: $taupe
+			display: flex
+			font-size: rem(12)
+			justify-content: flex-end
+			line-height: 3.25em
+			margin: 0 rem(30)
+			padding: 0 rem(30)
+			text-transform: uppercase
+
+	&__holder
+		border: 1px solid transparent
+		display: none
+
+		&:before
+			color: transparent
+			content: "."
+			display: block
+
+	&--sticky
+		+breakpoint($lg)
+			left: 0
+			margin: 0 !important // sass-lint:disable-line no-important
+			padding: 0 rem(60)
+			position: fixed
+			right: 0
+			top: 0
+			z-index: 14
+
+		.admin-bar &
+			margin-top: 32px !important // sass-lint:disable-line no-important
+			@media screen and (max-width: 782px)
+				margin-top: 46px !important // sass-lint:disable-line no-important
+
+
+	&--sticky + &__holder
+		+breakpoint($lg)
+			display: block
+
+	a,
+	&__holder
+		padding: rem(12 / $ratio) 0
+		+breakpoint($md)
+			padding: rem(10.5) 0
+		+breakpoint($lg)
+			padding: rem(15.5) 0
+
+	a
+		display: block
+		position: relative
+		top: -2px
+		transition: color $speed $ease
+		+breakpoint($lg)
+			margin-left: 2.25em
+
+		&:hover
+			color: $stone
+
+	&__toggle
+		position: relative
+		+breakpoint($md)
+			margin: 0 rem(-25)
+			padding: 0 rem(25)
+		+breakpoint($lg)
+			display: none
+
+		a,
+		a:hover,
+		a:focus
+			color: $horizon
+
+		// a
+		// 	&:before
+		// 		content: "Explore"
+
+		// 	.mtk-page-dine &:before
+		// 		content: "Mostrador Marram"
+
+		&:before,
+		&:after
+			border-top: 1px solid $taupe
+			content: ""
+			display: block
+			position: absolute
+			right: 0
+			top: 50%
+			width: rem(15)
+			+breakpoint($md)
+				width: rem(20)
+			+breakpoint($lg)
+				display: none
+
+		&:after
+			transform: rotate(90deg)
+
+	&__toggle
+		~ .menu-item,
+		~ .cat-item
+			display: none
+			+breakpoint($lg)
+				display: block
+
+	&--active &__toggle
+		~ .menu-item,
+		~ .cat-item
+			display: block
+
+	&--active &__toggle
+		border-bottom: 1px solid $stone
+
+		&:before
+			transform: rotate(45deg)
+
+		&:after
+			transform: rotate(135deg)
+
+	.menu-item--mobile
+		display: block
+		+breakpoint($lg)
+			display: none
+
+	.wp-block-cover + &,
+	.wp-block-image + &,
+	.wp-block-cover + & + &__holder,
+	.wp-block-image + & + &__holder
+		margin-top: rem(-40 / $ratio)
+		+breakpoint($md)
+			margin-top: rem(-75)

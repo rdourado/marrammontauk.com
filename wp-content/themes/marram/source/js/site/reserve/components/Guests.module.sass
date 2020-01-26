@@ -1,0 +1,62 @@
+@import "../../../../css/inc/functions"
+@import "../../../../css/inc/mixins"
+
+
+.value
+	composes: value from "./Calendar.module.sass"
+	+breakpoint($md)
+		width: 25%
+	+breakpoint($lg)
+		width: 20%
+
+.input
+	composes: input from "./Calendar.module.sass"
+
+	// sass-lint:disable-block no-vendor-prefixes
+	&::-webkit-outer-spin-button,
+	&::-webkit-inner-spin-button
+		-webkit-appearance: none
+		margin: 0
+
+	&[type="number"]
+		-moz-appearance: textfield
+
+.list,
+.item
+	list-style: none
+	margin: 0
+	padding: 0
+
+.list
+	background: $sand
+	border: 1px solid $stone
+	color: $taupe
+	display: none
+	font: 300 #{rem(24 / $ratio)} / 2.25 $sans
+	letter-spacing: .05em
+	padding: .5625em 0
+	position: absolute
+	right: -1px
+	top: 100%
+	+breakpoint($md)
+		font-size: rem(16)
+
+.active
+	display: block
+
+.number
+	background: transparent
+	border: none
+	color: inherit
+	display: block
+	font: inherit
+	letter-spacing: inherit
+	padding: 0 rem(25 / $ratio)
+	text-align: center
+	width: 100%
+	+breakpoint($md)
+		padding-left: rem(30)
+		padding-right: rem(30)
+
+	&:hover
+		background: $stone

@@ -1,0 +1,118 @@
+.mtk-stay-in-touch
+	margin: 0 rem(50 / $ratio)
+	padding: rem(100 / $ratio) 0
+	+breakpoint($md)
+		margin: 0
+		padding: rem(75) rem(55)
+	+breakpoint($lg)
+		margin: 0 rem(60)
+		padding: rem(75) 50% rem(75) 0
+
+	&__title,
+	&__lead
+		font: #{rem(30 / $ratio)} / #{rem(40 / $ratio)} $serif
+		margin: 0
+		padding: 0
+		+breakpoint($md)
+			font-size: rem(22)
+			line-height: rem(30)
+
+	&__title
+		color: $stone
+		float: left
+		font: bold #{rem(30 / $ratio)} / #{rem(40 / $ratio)} $sans
+		letter-spacing: .075em
+		margin: 0 .5em 0 0
+		padding: 0
+		text-transform: uppercase
+		+breakpoint($md)
+			font-size: rem(22)
+			line-height: rem(30)
+
+	&__field
+		align-items: center
+		border-bottom: 1px solid $taupe
+		color: $taupe
+		display: flex
+		flex-wrap: wrap
+		margin: rem(100 / $ratio) 0 rem(20 / $ratio)
+		+breakpoint($md)
+			flex-wrap: nowrap
+			font-size: rem(16)
+			margin: rem(75) 0 rem(20)
+
+		& + &
+			margin: rem(65 / $ratio) 0 rem(20 / $ratio)
+			+breakpoint($md)
+				margin: rem(55) 0 rem(20)
+
+	&__input,
+	&__button
+		background: transparent
+		border: none
+		margin: 0
+		outline: none
+		padding: .3em 0
+
+	&__input
+		appearance: none
+		border-bottom: 1px solid $taupe
+		color: inherit
+		flex-grow: 1
+		font: rem(26 / $ratio) $serif
+		margin: 0 0 rem(20 / $ratio)
+		width: 100%
+
+		& + &
+			border-bottom: none
+			margin: 0
+			width: auto
+		+breakpoint($md)
+			border-bottom: none
+			font-size: rem(16)
+			margin: 0
+			width: auto
+
+		&::placeholder
+			color: inherit
+			font: inherit
+
+	&__button
+		cursor: pointer
+		flex-shrink: 1
+		font: 500 rem(16 / $ratio) $sans
+		letter-spacing: .175em
+		text-transform: uppercase
+		+breakpoint($md)
+			font-size: rem(12)
+
+	&__response
+		color: $horizon
+		font: rem(26 / $ratio) $serif
+		margin: rem(20 / $ratio) 0
+		+breakpoint($md)
+			font-size: rem(16)
+			margin: rem(20) 0
+
+		&:empty
+			display: none
+
+	&__links
+		display: flex
+		font: italic #{rem(20 / $ratio)} / 1.1 $serif
+		justify-content: space-between
+		letter-spacing: .05em
+		list-style: none
+		margin: 0
+		padding: 0
+		text-transform: lowercase
+		+breakpoint($md)
+			font-size: rem(12)
+
+	&__button,
+	&__links a
+		color: inherit
+		transition: color $speed $ease
+
+		&:hover
+			color: $stone

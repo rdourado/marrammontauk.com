@@ -1,0 +1,99 @@
+.mtk-navigation
+	background: $sand
+	border-bottom: 1px solid transparent
+	box-sizing: border-box
+	display: flex
+	flex-shrink: 1
+	font: 500 rem(9.74, rem(20)) $sans
+	left: 0
+	letter-spacing: .175em
+	padding: 0 gut($sm)
+	position: absolute
+	text-transform: uppercase
+	top: 0
+	width: 100vw
+	z-index: 5
+	+breakpoint($md)
+		font-size: rem(13)
+		padding: 0 gut($md)
+	+breakpoint($xl)
+		border-width: 2px
+		font-size: rem(12)
+		padding: 0 gut($xl)
+
+	&--sticky
+		+admin-bar
+		border-color: $stone
+		box-sizing: border-box
+		left: 0
+		margin: 0
+		padding: 0 gut($sm)
+		position: fixed
+		top: 0
+		visibility: visible
+		width: 100vw
+		+breakpoint($md)
+			margin: 0
+			padding: 0 gut($md)
+		+breakpoint($xl)
+			margin: 0
+			padding: 0 gut($xl)
+
+	&:before
+		background: $sand
+		bottom: 0
+		content: ""
+		display: block
+		left: 0
+		margin: 0 (gut($sm) * -1)
+		position: absolute
+		right: 0
+		top: 0
+		z-index: 3
+		+breakpoint($md)
+			margin: 0
+
+	&--sticky &:before
+		margin: 0
+
+	a
+		color: inherit
+		display: block
+		padding: rem(15) gap($sm)
+		text-align: center
+		text-decoration: none
+		+breakpoint($md)
+			padding: rem(15) gap($md)
+		+breakpoint($xl)
+			padding: rem(15) gap($xl)
+
+		&:after
+			content: attr(data-title)
+			display: block
+			font-style: normal
+			height: 0
+			overflow: hidden
+			visibility: hidden
+
+	a:hover,
+	&--reserve .menu-item a
+		color: $horizon
+
+	&--sticky a
+		padding-bottom: rem(15)
+		padding-top: rem(15)
+
+	&__wrap,
+	&__menu
+		display: flex
+		flex-grow: 1
+
+	&__wrap
+		position: relative
+		z-index: 10
+
+	&__menu
+		+reset-list
+
+		.menu-item
+			margin-left: auto

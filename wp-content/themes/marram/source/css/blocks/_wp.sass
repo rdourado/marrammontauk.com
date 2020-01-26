@@ -1,0 +1,416 @@
+body,
+.wp-block-column
+	b
+		font: inherit
+		font-style: normal
+		font-variant: small-caps
+		text-transform: lowercase
+
+	em b,
+	strong b
+		font: inherit
+
+	> h1,
+	> h2,
+	> h3,
+	> h4
+		color: $taupe
+		font: bold #{rem(30 / $ratio)} / #{rem(40 / $ratio)} $sans
+		margin: rem(100 / $ratio) rem(50 / $ratio) rem(50 / $ratio)
+		padding: 0
+		text-transform: uppercase
+		+breakpoint($md)
+			font-size: rem(22)
+			line-height: rem(30)
+			margin: rem(75) rem(55) rem(50)
+		+breakpoint($lg)
+			margin-left: rem(60)
+			margin-right: rem(60)
+			max-width: rem(675)
+
+		&.is-style-sans-serif
+			font: 500 #{rem(18 / $ratio)} / 1 $sans
+			letter-spacing: .175em
+			text-transform: uppercase
+			+breakpoint($md)
+				font-size: rem(14)
+
+		&.is-style-subtitle
+			color: $taupe
+
+		+ .mtk-text-module
+			margin-top: 0
+
+		+ .mtk-rooms-group,
+		+ .mtk-room-type
+			margin-top: rem(-50 / $ratio)
+			+breakpoint($md)
+				margin-top: rem(-50)
+
+	> p:not(.mtk-text-module):not(.mtk-breadcrumbs),
+	> p:not(.mtk-text-module):not(.mtk-breadcrumbs)
+		font: #{rem(30 / $ratio)} / #{rem(40 / $ratio)} $serif
+		margin: 0 rem(50 / $ratio) rem(40 / $ratio)
+		padding: 0
+		+breakpoint($md)
+			font: #{rem(22)} / #{rem(30)} $serif
+			margin: 0 rem(55) rem(75)
+		+breakpoint($lg)
+			margin: 0 rem(60) rem(75)
+			max-width: rem(675)
+
+		strong
+			font-variant: small-caps
+			font-weight: normal
+			text-transform: lowercase
+
+	> h1,
+	> h2,
+	> h3,
+	> h4
+		+ p:not(.mtk-text-module):not(.mtk-breadcrumbs),
+		+ p:not(.mtk-text-module):not(.mtk-breadcrumbs)
+			+breakpoint($md)
+				margin-top: rem(36 - 50)
+
+	> p:not(.mtk-text-module):not(.mtk-breadcrumbs),
+	> p:not(.mtk-text-module):not(.mtk-breadcrumbs)
+		+ p:not(.mtk-text-module):not(.mtk-breadcrumbs),
+		+ p:not(.mtk-text-module):not(.mtk-breadcrumbs)
+			+breakpoint($md)
+				margin-top: rem(36 - 75)
+
+body
+	> iframe
+		border: 1px solid $stone !important // sass-lint:disable-line no-important
+		box-sizing: border-box
+		display: block
+		height: rem(365 / $ratio)
+		margin: 0 rem(50 / $ratio)
+		padding: 0
+		width: calc(100% - #{rem(50 / $ratio) * 2})
+		+breakpoint($md)
+			height: rem(450)
+			margin: 0 rem(55)
+			width: calc(100% - #{rem(55) * 2})
+		+breakpoint($lg)
+			height: rem(530)
+			margin: 0 rem(60)
+			width: calc(100% - #{rem(60) * 2})
+
+.wp-block-column
+	margin-bottom: rem(75 / $ratio)
+	+breakpoint($md)
+		margin-bottom: rem(100)
+
+	> h1,
+	> h2,
+	> h3,
+	> h4,
+	> p:not(.mtk-text-module):not(.mtk-breadcrumbs),
+	> p:not(.mtk-text-module):not(.mtk-breadcrumbs)
+		margin-left: 0
+		margin-right: 0
+
+.wp-block-columns
+	display: block
+	margin: 0 rem(50 / $ratio)
+	+breakpoint($md)
+		display: flex
+		margin: 0 rem(55)
+	+breakpoint($lg)
+		margin: 0 rem(60)
+
+.wp-block-cover,
+.wp-block-image,
+.wp-block-gallery
+	background-color: transparent
+	margin-bottom: 0
+	margin-top: 0
+
+	img
+		display: block
+		max-height: 100vh
+		min-height: 78.125vw
+		object-fit: cover
+
+	&.alignwide img,
+	&.alignfull img
+		+breakpoint($md)
+			min-height: rem(800)
+
+	.mtk-header + &
+		height: calc(100% - #{rem(50 / $ratio)})
+		margin: 0
+		+breakpoint($md)
+			height: calc(100% - #{rem(30)})
+		+breakpoint($lg)
+			height: calc(100% - #{rem(30)})
+
+		img
+			height: 100%
+
+	&.aligncenter
+		margin: rem(50 / $ratio) auto
+		max-width: calc(100% - #{rem(50 / $ratio) * 2})
+		+breakpoint($md)
+			margin: rem(50) auto rem(75)
+			width: calc(100% - #{rem(55) * 2})
+		+breakpoint($lg)
+			width: calc(100% - #{rem(60) * 2})
+
+	&.alignwide
+		margin: 0 auto rem(40 / $ratio)
+		width: calc(100% - #{rem(50 / $ratio) * 2})
+		+breakpoint($md)
+			margin: 0 auto rem(75)
+			width: calc(100% - #{rem(30) * 2})
+
+	&.alignfull
+		margin: 0 0 rem(50 / $ratio)
+		width: 100%
+		+breakpoint($md)
+			margin: 0 0 rem(30)
+
+	&.alignwide,
+	&.alignfull
+		+ .mtk-footer
+			margin-top: rem(-50 / $ratio)
+			+breakpoint($md)
+				margin-top: rem(-30)
+
+.wp-block-image
+	figcaption
+		color: $taupe
+		font: rem(16 / $ratio) $serif
+		margin: 0
+		padding: 1em 0 0
+		text-align: right
+		+breakpoint($md)
+			font-size: rem(12)
+
+.wp-block-cover
+	.wp-block-cover__inner-container
+		color: $sand
+		font: bold 10.5vw / 1.035 $serif
+		text-transform: uppercase
+		width: 100%
+		+breakpoint($md)
+			font-size: rem(69)
+		+breakpoint($lg)
+			font-size: rem(75)
+
+		p
+			font: inherit
+			margin: 0
+			padding: 0
+			text-align: center
+
+		b
+			font: inherit
+			text-transform: inherit
+
+		em,
+		strong
+			display: block
+			font: 500 .211764706em $sans
+			letter-spacing: .175em
+			margin-bottom: .3em
+
+			+ br
+				display: none
+			+breakpoint($md)
+				font-size: rem(16)
+			+breakpoint($lg)
+				font-size: rem(18)
+
+		a,
+		a:hover
+			color: inherit
+			text-decoration: inherit
+
+	&.is-style-alt
+		height: rem(530 / $ratio)
+		+breakpoint($md)
+			height: rem(350)
+		+breakpoint($lg)
+			height: rem(525)
+
+.wp-block-gallery
+	figcaption
+		display: none
+
+	.blocks-gallery-item,
+	.blocks-gallery-item:nth-of-type(2n)
+		margin: 0 0 rem(25 / $ratio)
+		width: 100%
+
+	+breakpoint("wpmd")
+		&.columns-3 .blocks-gallery-item
+			margin: 0 rem(30) rem(30) 0
+			width: calc((100% - #{rem(30)}) / 2);
+
+			&:nth-of-type(3n)
+				margin-right: rem(30)
+
+			&:nth-of-type(2n)
+				margin-right: 0
+
+	+breakpoint($lg)
+		&.columns-3 .blocks-gallery-item
+			flex-grow: 0
+			margin: 0 rem(40) rem(40) 0
+			width: calc((100% - #{rem(40) * 2}) / 3);
+
+			&:nth-of-type(2n)
+				margin-right: rem(40)
+
+			&:nth-of-type(3n)
+				margin-right: 0
+
+	&:not(.is-style-carousel-single)
+		.blocks-gallery-item
+			display: block
+			position: relative
+
+			&:before
+				content: ""
+				display: block
+				padding-top: 95%
+
+		a,
+		img,
+		figure
+			display: block
+			height: 100%
+			left: 0
+			position: absolute
+			top: 0
+			width: 100%
+
+		img
+			object-fit: cover
+
+		a img
+			position: static
+
+		&.is-cropped img
+			min-height: auto
+
+	&.is-style-carousel-single
+		display: block
+
+		&:not(.slick-initialized)
+			.blocks-gallery-item + .blocks-gallery-item
+				display: none
+
+		.blocks-gallery-item
+			margin: 0 !important // sass-lint:disable-line no-important
+			position: relative
+			width: auto
+
+			&:before
+				display: none
+
+			figure
+				display: inline
+
+			img
+				display: block
+				height: 78.125vw
+				max-height: 50vh
+				min-height: rem(550 / $ratio)
+				object-fit: cover
+				width: 100%
+				+breakpoint($md)
+					min-height: rem(800)
+
+			figcaption
+				background: transparent
+				bottom: 50%
+				box-sizing: border-box
+				font: bold #{rem(87 / $ratio)} / 1.035 $serif
+				overflow: visible
+				padding: 0
+				text-transform: uppercase
+				transform: translateY(50%)
+				+breakpoint($md)
+					font-size: rem(69)
+				+breakpoint($lg)
+					font-size: rem(75)
+
+			em,
+			strong
+				display: block
+				font: 500 rem(18 / $ratio) $sans
+				letter-spacing: .175em
+
+				+ br
+					display: none
+				+breakpoint($md)
+					font-size: rem(16)
+				+breakpoint($lg)
+					font-size: rem(18)
+
+				// .slick-track
+				// 	height: 100%
+
+		.slick-arrow
+			align-items: center
+			background: transparent
+			border: none
+			display: flex
+			font: 0 / 0 serif
+			height: rem(120)
+			justify-content: center
+			margin: rem(120 / -2) 0 0
+			outline: none
+			padding: 0
+			pointer-events: none
+			position: absolute
+			top: 50%
+			visibility: hidden
+			width: rem(56)
+			z-index: 10
+			+breakpoint($md)
+				pointer-events: auto
+				visibility: visible
+
+			&:before
+				border-bottom: 1px solid #fff
+				border-right: 1px solid #fff
+				box-sizing: border-box
+				content: ""
+				display: block
+				height: rem(20)
+				width: rem(20)
+
+		.slick-prev
+			left: 0
+
+			&:before
+				transform: translateX(25%) rotate(135deg) skew(-6deg, -6deg)
+
+		.slick-next
+			right: 0
+
+			&:before
+				transform: translateX(-25%) rotate(-45deg) skew(-6deg, -6deg)
+
+.wp-block-separator
+	border: none
+	border-top: 1px solid $stone
+	margin: rem(50 / $ratio) auto
+	width: calc(100% - #{rem(50 / $ratio) * 2})
+	+breakpoint($md)
+		margin: rem(50) auto
+		width: calc(100% - #{rem(55) * 2})
+	+breakpoint($lg)
+		width: calc(100% - #{rem(60) * 2})
+
+	+ h1,
+	+ h2,
+	+ h3,
+	+ h4
+		+breakpoint($md)
+			margin-top: rem(50)

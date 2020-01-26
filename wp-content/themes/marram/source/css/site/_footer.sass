@@ -1,0 +1,155 @@
+.mtk-footer
+	align-items: center
+	background: $taupe
+	color: $sand
+	display: flex
+	flex-direction: column
+	padding: rem(100 / $ratio) rem(50 / $ratio) rem(75 / $ratio)
+	text-align: center
+	+breakpoint($md)
+		align-items: stretch
+		flex-direction: row
+		padding: rem(50) rem(55)
+	+breakpoint($lg)
+		padding: rem(50) rem(60)
+
+	a
+		transition: color $speed $ease
+
+	a:hover
+		color: $horizon
+
+	&__menu
+		font: 500 #{rem(20 / $ratio)} / 1.5 $sans
+		letter-spacing: .3em
+		list-style: none
+		margin: 0 auto
+		order: 1
+		padding: 0
+		text-align: center
+		text-transform: uppercase
+		+breakpoint($md)
+			align-self: center
+			font: 500 #{rem(9)} / #{rem(21)} $sans
+			margin: 0 0 0 auto
+			order: 3
+			text-align: right
+
+		& + &
+			margin-top: 1.35em
+			+breakpoint($md)
+				margin-left: rem(55)
+				margin-top: 0
+			+breakpoint($lg)
+				margin-left: rem(60)
+
+		&--social
+			+breakpoint($md)
+				display: none
+
+		a
+			display: block
+			font: inherit !important // sass-lint:disable-line no-important
+			text-transform: inherit
+			transition: color $speed $ease
+
+		.current-menu-item a
+			color: $horizon
+
+		.menu-item ~ .menu-item
+			margin-top: 1.35em
+			+breakpoint($md)
+				margin: 0
+
+		.menu-item--hide-on-mobile
+			display: none
+			+breakpoint($md)
+				display: block
+
+			+ .menu-item
+				margin-top: 0
+
+	&__logo
+		margin: rem(65 / $ratio) auto rem(50 / $ratio)
+		order: 2
+		width: rem(66 / $ratio)
+		+breakpoint($md)
+			flex-shrink: 0
+			margin: 0 rem(30) 0 0
+			order: 1
+			position: relative
+			width: auto
+
+		svg
+			display: block
+			height: 100%
+			width: 100%
+			+breakpoint($md)
+				height: rem(65)
+				width: rem(32)
+
+	&__contact
+		font: italic #{rem(25 / $ratio)} / #{rem(40 / $ratio)} $serif
+		letter-spacing: .05em
+		margin: 0
+		order: 3
+		text-align: center
+		+breakpoint($md)
+			align-self: flex-end
+			font-size: rem(14)
+			line-height: rem(20)
+			margin: 0 auto 0 0
+			order: 2
+			text-align: left
+
+	&__address,
+	&__phone,
+	&__email
+		margin: .15em 0
+		padding: 0
+		+breakpoint($md)
+			margin: 0
+
+		br
+			display: inline
+			+breakpoint($md)
+				display: none
+
+	&__phone,
+	&__email
+		display: inline
+		white-space: nowrap
+
+	&__phone:after
+		+breakpoint($md)
+			content: " | "
+
+	&__social
+		display: flex
+		flex-wrap: wrap
+		justify-content: center
+		list-style: none
+		margin: 0
+		order: 4
+		padding: 0
+		+breakpoint($md)
+			align-self: center
+			display: block
+			margin: 0 0 0 rem(55)
+			text-align: right
+		+breakpoint($lg)
+			margin-left: rem(60)
+
+		a
+			display: block
+			font: 0 / 0 serif
+			margin: rem(50 / $ratio) 0 0
+			+breakpoint($md)
+				font: 500 #{rem(9)} / #{rem(21)} $sans !important // sass-lint:disable-line no-important
+				letter-spacing: .3em
+				margin: 0
+				text-transform: uppercase
+				transition: color $speed $ease
+
+			&:hover
+				color: $horizon

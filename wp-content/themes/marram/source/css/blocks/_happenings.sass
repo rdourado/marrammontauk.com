@@ -1,0 +1,212 @@
+.mtk-happenings
+	margin: 0 rem(50 / $ratio)
+	padding: rem(100 / $ratio) 0 0
+	+breakpoint($md)
+		margin: 0
+		padding: rem(50) rem(55)
+	+breakpoint($lg)
+		margin: 0 rem(60)
+		padding: rem(50) 0
+
+	&__body
+		+breakpoint($lg)
+			align-items: flex-start
+			display: flex
+
+	&__title
+		color: $stone
+		font: bold #{rem(32 / $ratio)} / 1 $sans
+		letter-spacing: .075em
+		margin: 0 0 rem(50 / $ratio)
+		padding: 0
+		text-transform: uppercase
+		+breakpoint($md)
+			font-size: rem(22)
+			margin: 0 0 rem(50)
+
+		&:empty
+			display: none
+
+	&__preview
+		margin: 0 0 rem(50 / $ratio)
+		padding: 0
+		position: relative
+		width: 100%
+		+breakpoint($md)
+			margin: 0 0 rem(50)
+			max-width: rem(500)
+		+breakpoint($lg)
+			margin: 0
+
+		&::before
+			content: ""
+			display: block
+			padding-top: 90%
+
+		img
+			display: block
+			height: 100%
+			left: 0
+			object-fit: cover
+			position: absolute
+			top: 0
+			width: 100%
+
+	&__list
+		border-bottom: 1px solid $stone
+		list-style: none
+		margin: 0 rem(-50 / $ratio) -1px
+		padding: 0 rem(50 / $ratio)
+		+breakpoint($md)
+			border-bottom: none
+			margin: 0
+			padding: 0
+		+breakpoint($lg)
+			width: calc(100% - #{rem(500)})
+
+	&__event
+		border-top: 1px solid $stone
+		margin: 0 rem(-50 / $ratio)
+		padding: rem(32 / $ratio) rem(50 / $ratio)
+		position: relative
+		+breakpoint($md)
+			border-top: none
+			margin: 0
+			padding: rem(13) 0 rem(10)
+
+			&::after
+				border-right: 1px solid $stone
+				border-top: 1px solid $stone
+				content: ""
+				display: block
+				left: rem(-35)
+				margin-top: rem(-6)
+				opacity: 0
+				padding: rem(6)
+				position: absolute
+				top: rem(75 / 2)
+				transform: rotate(45deg) skew(10deg, 10deg)
+				transition: opacity $speed $ease
+		+breakpoint($lg)
+			margin-left: rem(55)
+
+		& + &
+			border-top: 1px solid $stone
+
+		&:not(&--active)
+			cursor: pointer
+
+	&__event--active
+		+breakpoint($md)
+			&::after
+				opacity: 1
+
+	&__date
+		display: block
+		font: #{rem(15 / $ratio)} / 1.5 $serif
+		letter-spacing: .075em
+		margin-bottom: .5em
+		text-transform: uppercase
+		+breakpoint($md)
+			flex-shrink: 0
+			font-size: rem(12)
+			line-height: 1.3em
+			margin-bottom: 0
+			padding: 0 rem(30) 0 0
+		+breakpoint($lg)
+			padding: 0 rem(55) 0 0
+
+		b,
+		i,
+		em,
+		strong
+			font-style: italic
+			text-transform: none
+
+	&__name
+		color: $horizon
+		font: 500 #{rem(30 / $ratio)} / #{rem(40 / $ratio)} $sans
+		letter-spacing: .05em
+		margin: 0
+		padding: 0 rem(38 / $ratio) 0 0
+		text-transform: uppercase
+		+breakpoint($md)
+			box-sizing: border-box
+			font-size: rem(22)
+			line-height: rem(30)
+			padding: 0 rem(30) 0 0
+		+breakpoint($lg)
+			padding: 0 rem(55) 0 0
+
+		b
+			font: inherit
+			text-transform: inherit
+
+		&::before,
+		&::after
+			border-top: 1px solid $taupe
+			content: ""
+			display: block
+			position: absolute
+			right: rem(50 / $ratio)
+			top: rem(125 / 2 / $ratio)
+			width: rem(28 / $ratio)
+			+breakpoint($md)
+				margin-top: -1px
+				right: 0
+				top: rem(75 / 2)
+				width: rem(20)
+			+breakpoint($lg)
+				right: rem(5)
+
+		&::after
+			transform: rotate(90deg)
+
+	&__content
+		display: none
+		font: #{rem(30 / $ratio)} / #{rem(40 / $ratio)} $serif
+		margin: rem(50 / $ratio) 0 rem(35 / $ratio)
+		+breakpoint($md)
+			font: #{rem(22)} / #{rem(30)} $serif
+			margin: rem(19) 0 rem(21)
+			max-width: rem(500)
+
+		p
+			margin: 0
+			padding: 0
+
+	&__button
+		border: 1px solid $stone
+		display: none
+		font: 500 #{rem(16 / $ratio)} / 1.25 $sans
+		letter-spacing: .175em
+		margin: rem(75 / $ratio) 0 rem(35 / $ratio)
+		padding: .9em 2em
+		text-transform: uppercase
+		transition: background $speed $ease
+		+breakpoint($md)
+			font-size: rem(12)
+			margin: rem(55) 0 rem(21)
+
+		&:hover
+			background: $stone
+
+	&__content + &__button
+		margin-top: rem((75 - 35) / $ratio)
+		+breakpoint($md)
+			margin-top: rem((55 - 21))
+
+	&__event--active &__content
+		display: block
+
+	&__event--active &__button
+		display: inline-block
+
+	&__event--active &__name
+		color: $horizon
+
+		&::before
+			transform: rotate(45deg)
+
+		&::after
+			transform: rotate(135deg)

@@ -1,0 +1,46 @@
+@import "../../../../css/inc/functions"
+@import "../../../../css/inc/mixins"
+
+
+.main
+	background: $sand-dark
+	border-bottom: 1px solid $stone
+	border-top: 1px solid $stone
+	box-sizing: border-box
+	display: none
+	left: 0
+	padding: rem(45 / $ratio) rem(50 / $ratio) rem(50 / $ratio)
+	position: absolute
+	top: 100%
+	width: 100vw
+	+breakpoint($md)
+		border: none
+		padding: 0
+
+.active
+	display: block
+	+breakpoint($md)
+		display: flex
+
+.button
+	background: transparent
+	border: 1px solid $stone
+	box-sizing: border-box
+	color: $taupe
+	display: block
+	font: 500 #{rem(12)} / 1.5 $sans
+	height: 100%
+	letter-spacing: .175em
+	padding: rem(10 / $ratio) rem(10 / $ratio) rem(11 / $ratio)
+	text-transform: uppercase
+	transition: background $speed $ease
+	width: 100%
+	+breakpoint($md)
+		border-right: none
+		padding: rem(16) rem(10)
+		width: 30%
+	+breakpoint($lg)
+		width: 20%
+
+	&:hover
+		background: $stone

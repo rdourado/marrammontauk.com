@@ -1,0 +1,49 @@
+.mtk-booking-form
+	animation: fade-in $speed
+	background: $sand
+	bottom: 0
+	left: 0
+	overflow: auto
+	position: fixed
+	right: 0
+	top: rem(200)
+	z-index: 2
+	+admin-bar
+	+breakpoint($md)
+		top: rem(74 + 52)
+	+breakpoint($xl)
+		top: rem(74 + 54)
+
+	&--loading:before
+		animation: spin 1s infinite
+		border: 4px solid
+		border-color: $horizon transparent transparent
+		border-radius: 50%
+		content: ""
+		display: block
+		height: rem(24)
+		left: 50%
+		margin: rem(24 / -2)
+		position: absolute
+		top: 50%
+		width: rem(24)
+
+
+@keyframes fade-in
+	from
+		opacity: 0
+
+	to
+		opacity: 1
+
+@keyframes spin
+	0%
+		animation-timing-function: cubic-bezier(.55, .055, .675, .19)
+		transform: rotate(0)
+
+	50%
+		animation-timing-function: cubic-bezier(.215, .61, .355, 1)
+		transform: rotate(180deg)
+
+	100%
+		transform: rotate(360deg)
