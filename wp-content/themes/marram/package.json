@@ -23,7 +23,7 @@
 		"babel-eslint": "^10.0.1",
 		"babel-loader": "^8.0.6",
 		"browser-sync": "^2.26.5",
-		"browserslist": "^4.6.1",
+		"browserslist": "^4.16.5",
 		"classnames": "^2.2.6",
 		"click-outside": "^2.0.2",
 		"core-js": "3",
